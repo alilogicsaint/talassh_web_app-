@@ -1,7 +1,7 @@
 import { Button, Grid,  TextareaAutosize, TextField, } from '@mui/material'
 import React from 'react'
-import ButtonLeftlist from '../components/buttonLeftlist'
-import ButtonRightList from '../components/buttonRightList'
+import ButtonLeftlist from '../components/buttons/buttonLeftlist'
+import ButtonRightList from '../components/buttons/buttonRightList'
 import { Navbar } from '../components/navBar';
 import { Box } from '@mui/system'
 import Footer from '../components/footer';
@@ -37,7 +37,7 @@ export default function BusinessAccount() {
   
   
   <Grid container xs direction="row" > 
-    <Grid item  xs={12} sm={12}  md={12} lg={2} spacing={2} > 
+    <Grid item  xs={12} sm={12}  md={12} lg={2}  > 
       <ButtonLeftlist/> 
     </Grid>
     <Grid item xs={12} sm={12} md={7.9}   sx={{ }} >
@@ -278,7 +278,7 @@ export default function BusinessAccount() {
       </Box> 
   </Grid>
     
-    <Grid item xs={12} sm={12}  md={12} lg={2} spacing={2} > 
+    <Grid item xs={12} sm={12}  md={12} lg={2}  > 
     <ButtonRightList/>  
     </Grid>
 

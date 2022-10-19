@@ -43,13 +43,17 @@ export default function ButtonLeftlist() {
            sx={{ boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m:1 ,pt:1, justifyContent:"space-between" , backgroundColor:"#FFC294",'&:hover': { backgroundColor: '#FFC294', opacity: [0.9, 0.8, 0.7],}  ,  fontFamily:"'Noto Nastaliq Urdu', serif;" }}>کاروبر</Button>
            
            
-           <Button endIcon={<EngineeringIcon/>} 
+           <Button endIcon={<EngineeringIcon/>}
+           value="/Expert_Entery"
+           onClick={(e)=>{handleClick(e.target.value)}} 
            variant="contained"   
            size='large' 
            sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#89CAFF",'&:hover': { backgroundColor: '#89CAFF', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>  کاریگر</Button>
 
            <Button 
-             endIcon={<HomeRepairServiceIcon/>}
+            endIcon={<HomeRepairServiceIcon/>}
+            value="/Helper_Entry"
+            onClick={(e)=>{handleClick(e.target.value)}}
             variant="contained"   
             size='large' 
             sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#588539",'&:hover': { backgroundColor: '#588539', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>مزدورہیلپر</Button>

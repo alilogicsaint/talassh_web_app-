@@ -1,8 +1,8 @@
 import { Grid,  Button,ButtonGroup, Box,} from '@mui/material';
 import {Navbar} from "../components/navBar";
-import ButtonLeftlist from '../components/buttonLeftlist'
-import ButtonRightList from '../components/buttonRightList';
-import CenterButton from "../components/CenterButton";
+import ButtonLeftlist from '../components/buttons/buttonLeftlist'
+import ButtonRightList from '../components/buttons/buttonRightList'
+import CenterButton from "../components/buttons/CenterButton";
 import Footer from "../components/footer";
 
 

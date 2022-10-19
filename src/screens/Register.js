@@ -1,8 +1,8 @@
 import React from 'react'
 import {Navbar} from "../components/navBar";
 import { Grid,  Button, Box,} from '@mui/material';
-import ButtonLeftlist from '../components/buttonLeftlist'
-import ButtonRightList from '../components/buttonRightList';
+import ButtonLeftlist from '../components/buttons/buttonLeftlist'
+import ButtonRightList from '../components/buttons/buttonRightList'
 import { useNavigate } from "react-router-dom";
 import Footer from '../components/footer';
 
@@ -29,7 +29,7 @@ export default function Register() {
      
       {/* button list 1 */}
 
-    <Grid item xs={12} sm={12}  md={12} lg={2}  spacing={2} >
+    <Grid item xs={12} sm={12}  md={12} lg={2}   >
         <ButtonLeftlist/>
     </Grid> 
 
@@ -126,7 +126,7 @@ export default function Register() {
        </Box>
     </Grid>
   
-    <Grid item xs={12} sm={12}  md={12} lg={2} spacing={2} >
+    <Grid item xs={12} sm={12}  md={12} lg={2}  >
         <ButtonRightList/>
     </Grid>
   

@@ -1,20 +1,24 @@
 
 
 const INITIAL_STATE={
-    data:{
-
-    }
+    user: [],
+    data:[],
 };
 
 const AppReducer =(state = INITIAL_STATE,action)=>{
-    console.log("this is reduser Action===>",action.data)
+  
     switch (action.type){
         case "GETDATA":
             return{
                 ...state,
-                data:action.data
+                user:action.user
             }
-            default:
+        case "GETTABLEDATA":
+                return{
+                    ...state,
+                    data:action.data
+                }
+        default:
                 return state
     }
     

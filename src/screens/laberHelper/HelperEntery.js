@@ -1,29 +1,32 @@
-import { Button, Grid, Typography } from '@mui/material'
-import { Box,} from '@mui/system'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
+import ButtonLeftlist from '../../components/buttons/buttonLeftlist'
+import ButtonRightList from '../../components/buttons/buttonRightList'
+import CommonBtn from '../../components/buttons/Commonbtn'
+import HomeButton from '../../components/buttons/homeButton'
+import { Navbar } from '../../components/navBar'
+import AddItem_Expert_entry from './components/AddItem_Expert_entry'
+import DataTable from './components/datatableEntery'
 
-import {Navbar} from "../../components/navBar";
-import ButtonLeftlist from '../../components/buttonLeftlist'
-import ButtonRightList from '../../components/buttonRightList';
-import AddItem_Business_entry from '../../components/AddItem_Business_entry';
-import DataTable from '../../components/dataTable';
-import { useEffect, useState  } from 'react'
-import { useSelector,useDispatch  } from 'react-redux'
-import {getdata} from '../../store/action'
+export default function HelperEntry() {
 
-
-
-export default function BusinessEntery() {
+//   const TabledataBusinessSearch = ["S.no",
+//   "Shop Name",
+//   "Main Category",
+//   "Sub Category",
+//   "Item Name",
+//   "Model",
+//   "Province",
+//   "City",
+//   "Uc/VC/M ain Areia"]
+// const rowDdata=["ShopName","MainCategory","SubCategory","ItemName","Model","Province","City","UcMainArea"]
   
-    const state =useSelector(state =>state)
-    const dispatch = useDispatch()
-    let alltodos = state.data
-    console.log(state)
-
-    useEffect(()=>{
-       dispatch(getdata())   
-    },[]);
-
+//   const state = useSelector(state =>state)
+//   const dispatch = useDispatch()
+  
+//   useEffect(()=>{
+//      dispatch(getTabledata())  
+//   },[]);
   return (
     <div>
     
@@ -41,14 +44,14 @@ export default function BusinessEntery() {
              margin:"0 auto" ,
              marginBottom:"-36px",   
               }}>
-        Business (کاروبار)
+        Hepler ( کاریگر)
       </p>
 </div>
         
         
     <Grid container  xs={12} sm={12}  md={12}  lg={12} >
         
-    <Grid item  xs={12} sm={3} md={2}  lg={2} spacing={2} > <ButtonLeftlist/> </Grid>
+    <Grid item  xs={12} sm={3} md={2}  lg={2}  > <ButtonLeftlist/> </Grid>
 
     <Grid container   xs={12} sm={6} md={7}  lg={7.9} sx={{mt:5}}   > 
         <Grid item xs={12} sm={12} md={4}  lg={7} >
@@ -56,26 +59,27 @@ export default function BusinessEntery() {
                 <Box sx={{ display:"flex", justifyContent:"flex-start",width:"100%" }}>
                     
                     <img style={mystyle.img} src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
-                   
+
                     <div  style={mystyle.heading} >
                         <h2 style={mystyle.htag}>Mani Fani Food Point</h2>
                     </div>
+
                 </Box>
             <Grid  item container direction="row"  sx={{p:1 }}>
                 <Grid xs direction="column"  >
-                     <Typography>{alltodos.name}</Typography>
-                     <Typography>{alltodos.number}</Typography>
-                     <Typography>{alltodos.watsapp}</Typography>
-                     <Typography>{alltodos.email}</Typography>
-                     <Typography>{alltodos.facebook}</Typography>
-                     <Typography>{alltodos.instagram}</Typography>
+                     <Typography>name</Typography>
+                     <Typography>number</Typography>
+                     <Typography>watsapp</Typography>
+                     <Typography>email</Typography>
+                     <Typography>facebook</Typography>
+                     <Typography>instagram</Typography>
                 </Grid>
                 <Grid xs direction="column"  >
-                     <Typography>{alltodos.country}</Typography>
-                     <Typography>{alltodos.state}</Typography>
+                     <Typography>country</Typography>
+                     <Typography>state</Typography>
                      <Typography>U / VC/ Main Area </Typography>
-                     <Typography>{alltodos.famous}</Typography>
-                     <Typography>{alltodos.address}</Typography>
+                     <Typography>famous</Typography>
+                     <Typography>address</Typography>
                  </Grid> 
             </Grid>
           </Box>
@@ -103,7 +107,7 @@ export default function BusinessEntery() {
     </Grid>
    
        
-    <Grid item xs={12} sm={3} md={2}  lg={2} spacing={2}> <ButtonRightList/>  </Grid>
+    <Grid item xs={12} sm={3} md={2}  lg={2} > <ButtonRightList/>  </Grid>
     </Grid>
 
     {/* section 2 */}
@@ -115,7 +119,7 @@ export default function BusinessEntery() {
                 </h1>
               </div>
              <Box >
-              <AddItem_Business_entry/>
+              <AddItem_Expert_entry/>
              </Box>
         </Grid>
         <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"0px 150px 40px 150px"}} >
@@ -131,49 +135,38 @@ export default function BusinessEntery() {
 
 
         <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"0px 150px 40px 150px"}} >
-              <div>
-                <h1>
-                   Existing Items Data
-                </h1>
-              </div>
-             <Box >
-              <Button>
-                
-              </Button>
-             </Box>
-        </Grid>
+         <Box sx={{display:"flex", justifyContent:"space-around", width:"50%",margin:"0 auto" }}>
+          <HomeButton/>  
+          <CommonBtn color={"#72B347"} link={"/Helper_Search"} textvalue={"next page"} widthval={"200px"}/>
+          <CommonBtn color={"#EDBD2B"} link={"/"} textvalue={"Add New Item"} widthval={"200px"} /> 
+         </Box> 
+       </Grid>
        
     
           
     </div>
   )
-
-  
-
-
 }
 
 const mystyle = {
-    img:{
-        width:"40%",
-        height:"40%",
-        padding: "10px",
-    },
+  img:{
+      width:"40%",
+      height:"40%",
+      padding: "10px",
+  },
 
-    heading:{
-        display:"flex",
-        fontSize:"15px",
-        padding:"5px",
-        alignItems: "flex-end",
-    },
-    img2:{
-        width:"94%",
-        height:"94%",
-        padding: "10px",
-    },
-    htag:{
-        margin:"0 auto"
-    }
+  heading:{
+      display:"flex",
+      fontSize:"15px",
+      padding:"5px",
+      alignItems: "flex-end",
+  },
+  img2:{
+      width:"94%",
+      height:"94%",
+      padding: "10px",
+  },
+  htag:{
+      margin:"0 auto"
+  }
 }
-
-

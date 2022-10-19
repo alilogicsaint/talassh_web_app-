@@ -2,7 +2,7 @@ import { Button, Grid, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
-export default function AddItem_Business_entry() {
+export default function AddItem_Helper_entry() {
   return (
     <div>
     <Grid item container xs={12} >
@@ -14,21 +14,21 @@ export default function AddItem_Business_entry() {
               color="warning"  
               sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
               inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
-              placeholder="Full Name"              
+              placeholder="Experty Name"              
            />
            <TextField   
               fullWidth 
               color="warning"  
               sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
               inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-              placeholder="Land Line Number "      
+              placeholder="Experience in Years"      
            />
            <TextField  
               fullWidth  
               color="warning"  
               sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
               inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-              placeholder="Mobile No"             
+              placeholder="Demanded Salary"             
            />
     </Box>
     </Grid>
@@ -40,22 +40,16 @@ export default function AddItem_Business_entry() {
               color="warning"  
               sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
               inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
-              placeholder="Full Name"              
+              placeholder="Payment Type (D) o(M)"              
            />
            <TextField  
               fullWidth  
               color="warning"  
               sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
               inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-              placeholder="Land Line Number "      
+              placeholder="Experience Details"      
            />
-           <TextField 
-              fullWidth   
-              color="warning"  
-              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-              inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-              placeholder="Mobile No"             
-           />
+           
     </Box>
     </Grid>
     
@@ -86,17 +80,18 @@ export default function AddItem_Business_entry() {
          backgroundColor:"#70B243",
          m:"5px",
          '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
-         }}> Submit
+         }}> Save
         </Button>
         <Button 
          variant="contained"  
          sx={{backgroundColor:"#70B243",
          m:"5px",
          '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
-         }}> save
+         }}> Add New
       </Button>
         </Box>
     </Grid>
+    
 </Grid>
     </div>
   )

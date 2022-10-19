@@ -36,14 +36,14 @@ export const Navbar = (props) => {
           <IconButton onClick={onSidebarOpen} sx={{ display: {  xs: 'inline-flex',  lg: 'none' } }}>
            <MenuIcon fontSize="small" />
           </IconButton>
-          <Link to="/"  sx={{color:"white",textDecoration: "none" }}>
+          <Link to="/"  style={{color:"white",textDecoration: "none" }}>
           <div style={{display:'flex',alignItems:"flex-end",}}>
             <p style={navBarStyle.heading} >Talash</p><p style={navBarStyle.subHeading} >.com</p> 
            </div>
           </Link>
            
           <Box sx={{ flexGrow: 1 }} /> 
-          <Link  to="/"    sx={{color:"white"}}  >
+          <Link  to="/"    style={{color:"white",textDecoration: "none"}}  >
            <div style={navBarStyle.headingDiv}>
            <p style={navBarStyle.subHeading} > سب کی سب کیلیے </p><p style={navBarStyle.heading}>تلاش </p> 
            </div>
@@ -72,12 +72,10 @@ const navBarStyle = {
   heading:{ fontSize:"40px",
   margin:"0px auto",
   padding:"11px 0px",
-  
   },
   subHeading:{ 
   padding: "15px 5px",
   fontSize:"15px",
   margin:"0px auto",
-  color:"white"
-}
+ }
 }

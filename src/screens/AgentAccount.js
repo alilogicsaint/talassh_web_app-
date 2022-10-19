@@ -1,7 +1,7 @@
 import { Button, Grid,TextareaAutosize, TextField, } from '@mui/material'
 import React from 'react'
-import ButtonLeftlist from '../components/buttonLeftlist'
-import ButtonRightList from '../components/buttonRightList'
+import ButtonLeftlist from '../components/buttons/buttonLeftlist'
+import ButtonRightList from '../components/buttons/buttonRightList'
 import { Navbar } from '../components/navBar';
 import { Box } from '@mui/system'
 import Footer from '../components/footer';
@@ -39,7 +39,7 @@ export default function AgentAccount() {
 
    
 
-    <Grid item  xs={12} sm={12}  md={12} lg={2}  spacing={2}> 
+    <Grid item  xs={12} sm={12}  md={12} lg={2}  > 
       <ButtonLeftlist/> 
     </Grid>
     <Grid item xs={12} sm={12} md={7}  lg={7.9}  sx={{ }} >
@@ -157,8 +157,7 @@ export default function AgentAccount() {
   <Grid item 
   xs={12}  sm={6} md={6} lg={6} 
   direction="column" 
-  sx={{display:"flex" , alignItems: "center", mt:5,pr:2,pr:2
-  }}>
+  sx={{display:"flex" , alignItems:"center", mt:5,pr:2,pr:2}}>
     
     <Box  sx={{ 
                 display: "flex",
@@ -196,7 +195,7 @@ export default function AgentAccount() {
     </div>
 
     <img 
-    style={{width:"75%",height:"140px"}}  
+    style={{width:"75%",height:"140px"}}  alt="profile"
     src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
        
     <Box  sx={{ 
@@ -281,7 +280,7 @@ export default function AgentAccount() {
       </Box> 
   </Grid>
     
-    <Grid item  xs={12} sm={12}  md={12} lg={2} spacing={2}> 
+    <Grid item  xs={12} sm={12}  md={12} lg={2} > 
     <ButtonRightList/>  
     </Grid>
 
