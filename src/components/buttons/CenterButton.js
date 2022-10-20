@@ -1,6 +1,7 @@
 import { Button, ButtonGroup } from '@mui/material'
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+import CommonBtn from './Commonbtn';
 
 export default function CenterButton() {
 
@@ -30,6 +31,8 @@ export default function CenterButton() {
           Enter Your Data</Button>
         <Button 
         variant="contained"   
+        value="/login"
+        onClick={(e)=>{handleClick(e.target.value)}}
         sx={CenterBtbStyke.btnlogin}>
           Login</Button>
         <Button 

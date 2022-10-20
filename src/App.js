@@ -8,20 +8,20 @@ import Home from "./screens/home";
 import Register from "./screens/Register";
 import  store  from './store/index';
 import { Provider } from 'react-redux';
-import Home2 from "./screens/home2";
 import BusinessSearch from "./screens/business/BusinessSearch";
 import ExpertSearch from "./screens/Expert/expertSearch";
 import ExpertEntry from "./screens/Expert/expertEntery";
 import HelperEntry from "./screens/laberHelper/HelperEntery";
 import HelperSearch from "./screens/laberHelper/HelperSearch";
-import  { BasicTable } from "./components/DataTable";
+import Login from "./screens/login";
+import MySlider from "./components/slider/slider";
 
 export default function BasicExample() {
   return (
     <Provider store={store}>
     <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="home2" element={<Home2/>} />
+     
       <Route path="business_Account" element={<BusinessAccount/>} />
       <Route path="register" element={<Register/>} />
       <Route path="Customer_Account" element={<CustomerAccount/>} />
@@ -33,7 +33,8 @@ export default function BasicExample() {
       <Route path="Expert_Search" element={<ExpertSearch/>} />
       <Route path="Helper_Entry" element={<HelperEntry/>} />
       <Route path="Helper_Search" element={<HelperSearch/>} />
-      <Route path="example" element={<BasicTable/>} />
+      <Route path="login" element={<Login/>} />
+      <Route path="Slider" element={<MySlider/>} />
     </Routes>
 
   </Provider>

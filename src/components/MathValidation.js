@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
 import { green } from '@mui/material/colors';
 import $ from 'jquery';
+import "../components/Animations/shake.css"
 
 export default function MathValidation() {
 

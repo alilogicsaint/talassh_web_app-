@@ -10,13 +10,14 @@ export default function HomeButton() {
     }  
   return (
     <Box  sx={{ 
-        display:"flex",
-        justifyContent: "center",
-        alignContent: "center",
-        alignItems: "center",   
-  }} >
+           display:"flex",
+           justifyContent: "center",
+           alignContent: "center",
+           alignItems: "center",   
+          }}>
 <Button
     variant="contained" 
+    size="large"
     value="/"
     onClick={(e)=>{handleClick(e.target.value)}}
     sx={{ 

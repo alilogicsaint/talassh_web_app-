@@ -1,157 +1,176 @@
 import { Button, Grid,TextareaAutosize, TextField, } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import ButtonLeftlist from '../components/buttons/buttonLeftlist'
 import ButtonRightList from '../components/buttons/buttonRightList'
 import { Navbar } from '../components/navBar';
 import { Box } from '@mui/system'
 import Footer from '../components/footer';
 import MathValidation from '../components/MathValidation';
+import HomeButton from '../components/buttons/homeButton';
+import CommonBtn from '../components/buttons/Commonbtn';
+import { ImageUpload } from '../components/imgUpandShow/uploadimage';
+import Swiper from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+import MySliderSWP from '../components/slider/slider';
+import profilePlaceholder from '../Assets/images/400X400placeholder.png'
 // import MathValidation from '../components/MathValidatiobn/MathValidation'
 
-
-
-
 export default function AgentAccount() {
-
-  return (
-    <div>
-    
-
-  <Navbar/>
+   
+   const [Fullname, setFullname] = useState('')
+   const [LineNumber, setLinemumber] = useState()
+   const [MobileNo, setMobileNo] = useState()
+   const [WhatsappNo, setWhatsappNo] = useState()
   
-  <Box sx={{
-        height: 90,
-      }}
-    />
-<div style={{ textAlign:"center" }} >
-      <p style={{
+   var data =[
+      Fullname,
+      LineNumber,
+      MobileNo,
+      WhatsappNo,
+    ]
+   function collectdata(){
+    let send = data
+    console.log(send)
+   }
+   
+
+
+return (
+  <div>
+    <Navbar/>
+  
+    <Box sx={{
+         height: 90,
+       }}
+     />
+  <div style={{ textAlign:"center" }} >
+    <p style={{
               fontSize:"30px",
               fontWeight:"bold",
               textAlign:"center",
               margin:"0 auto" ,
               marginBottom:"-36px", 
-              }}>
+            }}>
        Agent Account
-      </p>
-</div>
+    </p>
+  </div>
   
   <Grid container xs direction="row" > 
-
    
-
     <Grid item  xs={12} sm={12}  md={12} lg={2}  > 
       <ButtonLeftlist/> 
     </Grid>
+   
     <Grid item xs={12} sm={12} md={7}  lg={7.9}  sx={{ }} >
+       <Box 
+         sx={{
+           width:"100%",
+           display:"flex", 
+           justifyContent: "space-evenly", 
+           alignContent: "center",
+           flexDirection: "row",
+           flexWrap:"wrap"}}>
+         <Grid item 
+                 xs={12}  sm={5} md={6} lg={5} 
+                 direction="column" 
+                 sx={{display:"flex" , 
+                 alignItems: "center",
+                 mt:5,pl:2,pr:2  
+           }}>
+           <Box  sx={{ 
+                 display: "flex",
+                 flexDirection: "column",
+                 justifyContent: "space-between",
+                 height:"100%",
+                 margin: "10px 0px",
+                 width: "80%",
+            }} >
+              <Box  sx={{ 
+                width:  "30vh",
+                height: "30vh",
+                margin: "0px 0px",   
+                border: "2px solid gray",
+                boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
+             }} >
 
-    <Box 
-      sx={{
-      width:"100%",
-       display:"flex", 
-      justifyContent: "space-evenly", 
-  //  alignItems:" center", 
-      alignContent: "center",
-      flexDirection: "row",
-      flexWrap:"wrap"}}>
-  <Grid item 
-    xs={12}  sm={5} md={6} lg={5} 
-    direction="column" 
-    sx={{display:"flex" , alignItems: "center", mt:5,pl:2,pr:2  
-    }}>
-     <Box  sx={{ 
-           display: "flex",
-           flexDirection: "column",
-           justifyContent: "space-between",
-           height:"100%",
-           margin: "10px 0px",
-           width: "80%",
-        }} >
-          
-    <img 
-    style={{width:"65%",height:"100px"}}  
-    src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
-            placeholder="Full Name"              
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Land Line Number "      
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Mobile No"             
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Whatsapp No"            
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Email Address"         
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Facebook ID "           
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Instagram ID"          
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Country"               
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="Province / Estate "     
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="City "                 
-         />
-        <TextField   
-            color="warning"  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            placeholder="UC/ VC/ Main Area "    
-         />
-        <TextField  
-            color="warning"  
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1,mb:2 }}
-            placeholder="Nearest Famous Place "
-         />
-        <TextareaAutosize   
-            minRows={3}  
-            placeholder=" Street Address "  
-         />
-         <Box height={20} ></Box>
-        <TextareaAutosize   
-            minRows={4}   
-            placeholder=" Google Maps Link  "  
-         />
-    </Box>
+            <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={profilePlaceholder} />
+             
+             </Box>
+
+            <TextField 
+                onChange={(e)=>{setFullname(e.target.value)}}
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }}  
+                placeholder="Full Name"              
+                 />
+            <TextField   
+                onChange={(e)=>{setLinemumber(e.target.value)}}
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Land Line Number "      
+             />
+            <TextField  
+                onChange={(e)=>{setMobileNo(e.target.value)}} 
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Mobile No"                  
+             />
+            <TextField  
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}  
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Whatsapp No"                 
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Email Address"              
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Facebook ID "                 
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Instagram ID"                
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Country"                    
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="Province / Estate "     
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="City "                           
+             />
+            <TextField   
+                color="warning" sx={mystyle.TextFieldsx} 
+                inputProps={{style:mystyle.TextInSty }} 
+                placeholder="UC/ VC/ Main Area "    
+             />
+            <TextField  
+                color="warning" sx={mystyle.TextFieldsx}
+                inputProps={{style:mystyle.TextInSty }}  
+                placeholder="Nearest Famous Place "
+             />
+            <TextareaAutosize   
+                minRows={3}  
+                placeholder=" Street Address "  
+             />
+             <Box height={20} ></Box>
+            <TextareaAutosize   
+                minRows={4}   
+                placeholder=" Google Maps Link  "  
+             />
+         </Box>
   </Grid>
     
   <Grid item 
@@ -170,21 +189,19 @@ export default function AgentAccount() {
 
     <TextField   
          color="warning"  
-         inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} placeholder="CNIC" />
+         inputProps={{style:mystyle.TextInSty }}  
+         sx={mystyle.TextFieldsx } placeholder="CNIC" />
     <TextField   
          color="warning" 
-         inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} 
+         inputProps={{style:mystyle.TextInSty }}  
+         sx={mystyle.TextFieldsx } 
          placeholder="CNIC Issue Date" />
     <TextField   color="warning" 
-         inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} 
+         inputProps={{style:mystyle.TextInSty }} sx={mystyle.TextFieldsx} 
          placeholder="CNIC Expiry Code" />
     <TextField  
          color="warning" 
-         inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-         sx={{ mt:1,mb:1, boxShadow: 3 ,borderRadius:1 }}
+         inputProps={{style:mystyle.TextInSty }} sx={mystyle.TextFieldsx}
          placeholder="Enter Admin Code" />
 
      </Box>
@@ -194,37 +211,40 @@ export default function AgentAccount() {
         </h3>
     </div>
 
-    <img 
+    {/* <img 
     style={{width:"75%",height:"140px"}}  alt="profile"
-    src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
-       
+    src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" /> */}
+     <Box  sx={{ 
+          width:"75%",
+          height:"170px",
+          margin:"0px 0px", 
+          boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)" ,               
+        }} ><MySliderSWP  /></Box> 
     <Box  sx={{ 
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
+          display:"flex",
+          flexDirection:"column",
+          justifyContent:"space-between",
           height:"120px",
           width: "75%",
-          margin: "10px 0px",                
+          margin:"10px 0px",                
         }} >
 
         <TextField   
              color="warning"  
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-             sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} placeholder="User ID" />
+             inputProps={{style:mystyle.TextInSty }}  
+             sx={mystyle.TextFieldsx } placeholder="User ID" />
         <TextField 
             color="warning" 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} placeholder="Password" />
+            inputProps={{style:mystyle.TextInSty }}  sx={mystyle.TextFieldsx} placeholder="Password" />
         <TextField   color="warning" 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
-            sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} 
+            inputProps={{style:mystyle.TextInSty }}  sx={mystyle.TextFieldsx} 
             placeholder="Confirm Password" />
         
     </Box>
 
         <MathValidation/>
         
-    <Box  sx={{ 
+      <Box  sx={{ 
                 display: "inline-flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -235,48 +255,22 @@ export default function AgentAccount() {
                 justifyContent: "space-between",
                 
              }} >
-      <Button 
-         variant="contained"  
-         sx={{backgroundColor:"#70B243",
-         '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
-         }}> Submit
-      </Button>
-          
-      <Button 
-         variant="contained"  
-         sx={{backgroundColor:"#FFC619",
-             '&:hover': { backgroundColor: '#FFC619', opacity: [0.9, 0.8, 0.7],},
-          }}> BusinessAccount 
-      </Button>
-            
-      <Button 
-          variant="contained"  
-          sx={{backgroundColor:"#F37825",
-               '&:hover': { backgroundColor: '#F37825', opacity: [0.9, 0.8, 0.7],},
-              }} > Talaash Agent Account
-      </Button> 
-
+        <Button 
+           variant="contained"  
+            onClick={collectdata()}
+            sx={{backgroundColor:"#70B243",
+            '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
+             }}> Submit
+        </Button>
+          <CommonBtn color={"#FFC619"} link={"/Business_Account"} textvalue={"BusinessAccount"} widthval={"100%"} />     
+          <CommonBtn color={"#F37825"} link={"/Customer_Account"} textvalue={"Customer Account"} widthval={"100%"} />
       </Box>
 
-      <Box  
-        sx={{ 
-          display:"flex",
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center", 
-          mt:1,  
-             }} >
-          <Button
-             variant="contained" 
-             sx={{ 
-              clipPath: "polygon(100% 0%, 100% 50%, 100% 100%, 18% 100%, 0 50%, 18% 0)",
-              width:150,
-              backgroundColor:"#040404",
-              '&:hover': { backgroundColor: '#040404', opacity: [0.9, 0.8, 0.7],},
-              }}>Home
-          </Button> 
+      <Box  sx={{ mt:1 }} >
+          <HomeButton/>
       </Box> 
     </Grid>
+      
       </Box> 
   </Grid>
     
@@ -290,4 +284,18 @@ export default function AgentAccount() {
 
     </div>
   )
+}
+
+
+
+const mystyle={
+  TextFieldsx:{
+    mt:1, 
+    boxShadow: 3 ,
+    borderRadius:1
+  },
+  TextInSty:{
+    padding:"6px 10px", 
+    fontSize:"14px"
+  }
 }

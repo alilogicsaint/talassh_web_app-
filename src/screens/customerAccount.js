@@ -6,7 +6,8 @@ import { Navbar } from '../components/navBar';
 import { Box } from '@mui/system'
 import Footer from '../components/footer';
 import MathValidation from '../components/MathValidation';
-// import MathValidation from '../components/MathValidatiobn/MathValidation'
+import HomeButton from '../components/buttons/homeButton'
+import CommonBtn from '../components/buttons/Commonbtn';
 
 
 
@@ -155,7 +156,7 @@ export default function CustomerAccount() {
          xs={12}  sm={6} md={6} lg={6} 
          direction="column" 
          sx={{display:"flex" , 
-              alignItems: "center", mt:5,pr:2,pr:2 }}>
+              alignItems: "center", mt:5,pr:2 }}>
 
       <div>
          <h3>
@@ -196,8 +197,7 @@ export default function CustomerAccount() {
         <Box  sx={{ 
                 display: "inline-flex",
                 flexDirection: "column",
-                justifyContent: "center",
-                height: "140px",
+                height: "130px",
                 margin: "22px 0px 0px 0px ",
                 width: "80%",
                 alignContent: "space-around",
@@ -210,40 +210,12 @@ export default function CustomerAccount() {
          '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
          }}> Submit
       </Button>
-          
-      <Button 
-         variant="contained"  
-         sx={{backgroundColor:"#FFC619",
-             '&:hover': { backgroundColor: '#FFC619', opacity: [0.9, 0.8, 0.7],},
-          }}> BusinessAccount 
-      </Button>
-            
-      <Button 
-          variant="contained"  
-          sx={{backgroundColor:"#F37825",
-               '&:hover': { backgroundColor: '#F37825', opacity: [0.9, 0.8, 0.7],},
-              }} > Talaash Agent Account
-      </Button> 
-
+          <CommonBtn color={"#FFC619"} link={"/Business_Account"} textvalue={"Business Account"} widthval={"100%"} />     
+          <CommonBtn color={"#F37825"} link={"/Agent_Account"} textvalue={"Agent Account"} widthval={"100%"} />
       </Box>
 
-      <Box  
-        sx={{ 
-          display:"flex",
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center", 
-          mt:1,  
-             }} >
-          <Button
-             variant="contained" 
-             sx={{ 
-              clipPath: "polygon(100% 0%, 100% 50%, 100% 100%, 18% 100%, 0 50%, 18% 0)",
-              width:150,
-              backgroundColor:"#040404",
-              '&:hover': { backgroundColor: '#040404', opacity: [0.9, 0.8, 0.7],},
-              }}>Home
-          </Button> 
+      <Box  sx={{ mt:1 }} >
+          <HomeButton/>
       </Box> 
 
   </Grid>

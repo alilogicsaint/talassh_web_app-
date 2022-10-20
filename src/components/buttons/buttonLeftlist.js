@@ -40,7 +40,7 @@ export default function ButtonLeftlist() {
            size='large'
            value="/Business_Entery"
            onClick={(e)=>{handleClick(e.target.value)}}
-           sx={{ boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m:1 ,pt:1, justifyContent:"space-between" , backgroundColor:"#FFC294",'&:hover': { backgroundColor: '#FFC294', opacity: [0.9, 0.8, 0.7],}  ,  fontFamily:"'Noto Nastaliq Urdu', serif;" }}>کاروبر</Button>
+           sx={{ ...btnsleft.common, backgroundColor:"#FFC294",'&:hover': { backgroundColor: '#FFC294', opacity: [0.9, 0.8, 0.7],},}}>کاروبر</Button>
            
            
            <Button endIcon={<EngineeringIcon/>}
@@ -48,7 +48,7 @@ export default function ButtonLeftlist() {
            onClick={(e)=>{handleClick(e.target.value)}} 
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#89CAFF",'&:hover': { backgroundColor: '#89CAFF', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>  کاریگر</Button>
+           sx={{...btnsleft.common, backgroundColor:"#89CAFF",'&:hover': { backgroundColor: '#89CAFF', opacity: [0.9, 0.8, 0.7], } , }}>  کاریگر</Button>
 
            <Button 
             endIcon={<HomeRepairServiceIcon/>}
@@ -56,48 +56,57 @@ export default function ButtonLeftlist() {
             onClick={(e)=>{handleClick(e.target.value)}}
             variant="contained"   
             size='large' 
-            sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#588539",'&:hover': { backgroundColor: '#588539', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>مزدورہیلپر</Button>
+            sx={{...btnsleft.common, backgroundColor:"#588539",'&:hover': { backgroundColor: '#588539', opacity: [0.9, 0.8, 0.7], } , }}>مزدورہیلپر</Button>
            
            <Button 
             endIcon={<GiBlockHouse/>}  
             variant="contained"   
             size='large' 
-            sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#AFBBCB",'&:hover': { backgroundColor: '#AFBBCB', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>
+            sx={{...btnsleft.common, backgroundColor:"#AFBBCB",'&:hover': { backgroundColor: '#AFBBCB', opacity: [0.9, 0.8, 0.7], } , }}>
             گھریلوسامان</Button>
            
            <Button 
            endIcon={<SiHappycow/>}
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#FFC106",'&:hover': { backgroundColor: '#FFC106', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>
+           sx={{...btnsleft.common, backgroundColor:"#FFC106",'&:hover': { backgroundColor: '#FFC106', opacity: [0.9, 0.8, 0.7], }  }}>
             مالمویشی</Button>
            <Button 
            endIcon={<Person3SharpIcon/>}
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#06B354",'&:hover': { backgroundColor: '#06B354', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>
+           sx={{...btnsleft.common, backgroundColor:"#06B354",'&:hover': { backgroundColor: '#06B354', opacity: [0.9, 0.8, 0.7], }  }}>
             عالم ومفتی</Button>
            <Button 
            endIcon={<FaChalkboardTeacher/>} 
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#0773C0",'&:hover': { backgroundColor: '#0773C0', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;" }}>
+           sx={{...btnsleft.common, backgroundColor:"#0773C0",'&:hover': { backgroundColor: '#0773C0', opacity: [0.9, 0.8, 0.7], }  }}>
             امام حافظ و قاری</Button>
            <Button 
            endIcon={<GiTeacher></GiTeacher>}
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#8446B2",'&:hover': { backgroundColor: '#8446B2', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;",}}>
+           sx={{...btnsleft.common, backgroundColor:"#8446B2",'&:hover': { backgroundColor: '#8446B2', opacity: [0.9, 0.8, 0.7], } }}>
             اساتزہکرام</Button>
-            <Button
+          <Button
             endIcon={<GiWantedReward />} 
            variant="contained"   
            size='large' 
-           sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , backgroundColor:"#C70F0F",'&:hover': { backgroundColor: '#C70F0F', opacity: [0.9, 0.8, 0.7], } ,fontFamily:"'Noto Nastaliq Urdu', serif;", }}>
+           sx={{...btnsleft.common, backgroundColor:"#C70F0F",'&:hover': { backgroundColor: '#C70F0F', opacity: [0.9, 0.8, 0.7], }}}>
             تلاش گمشدہ</Button>
-           
          </Box>    
         
      
   )
+}
+
+
+
+
+const btnsleft={
+  common:{
+    fontFamily:"'Noto Nastaliq Urdu', serif;", 
+    boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , 
+  }
 }

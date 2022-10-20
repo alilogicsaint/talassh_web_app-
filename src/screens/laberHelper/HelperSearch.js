@@ -1,20 +1,43 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import { Box,} from '@mui/system'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Navbar} from "../../components/navBar";
 import ButtonLeftlist from '../../components/buttons/buttonLeftlist'
 import ButtonRightList from '../../components/buttons/buttonRightList';
 import HomeButton from '../../components/buttons/homeButton';
 import Footer from '../../components/footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTabledata } from '../../store/action';
+import HelperSearchTabl from './components/dataTableSearch';
 
 
 
 
 export default function HelperSearch() {
 
+  const TabledataBusinessSearch = ["S.no",
+    "Shop Name",
+    "Main Category",
+    "Sub Category",
+    "Item Name",
+    "Model",
+    "Province",
+    "City",
+    "Uc/VC/M ain Areia"]
+  const rowDdata=["ShopName","MainCategory","SubCategory","ItemName","Model","Province","City","UcMainArea"]
+    
+    const state = useSelector(state =>state)
+    const dispatch = useDispatch()
+    
+    useEffect(()=>{
+       dispatch(getTabledata())  
+    },[]);
+
+
   return (
-    <>
-     <Navbar   />
+      <>
+    
+    <Navbar   />
     <Box sx={{
           height: 90,
         }}
@@ -73,50 +96,53 @@ export default function HelperSearch() {
       </Grid>
    
    <Grid item xs={12} sm={12}  md={12} lg={12}  sx={{margin:"0px 150px"}}>
-          table
+           <HelperSearchTabl data={TabledataBusinessSearch} tabledata={state} forRowData={rowDdata} />
    </Grid>
 
      
   </Grid>
-  <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"0px 150px 40px 150px"}} >
+  <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"20px 150px 40px 150px"}} >
    <HomeButton/>  
   </Grid>
     
 <Footer/>
     
-    </>
-  )
+      
+      </>
 
+  )
 }
 
 
 const mystyle = {
-  img:{
-      width:"40%",
-      height:"40%",
-      padding: "10px",
-  },
+    img:{
+        width:"40%",
+        height:"40%",
+        padding: "10px",
+    },
 
-  heading:{
-      display:"flex",
+    heading:{
+        display:"flex",
+        fontSize:"28px",
+        padding:"5px",
+        alignItems: "flex-end",
+    },
+    img2:{
+        width:"94%",
+        height:"94%",
+        padding: "10px",
+    },
+    htag:{
+        margin:"0 auto"
+    },
+    htag2:{
+      margin:"0 auto",
       fontSize:"28px",
-      padding:"5px",
-      alignItems: "flex-end",
-  },
-  img2:{
-      width:"94%",
-      height:"94%",
-      padding: "10px",
-  },
-  htag:{
-      margin:"0 auto"
-  },
-  htag2:{
-    margin:"0 auto",
-    fontSize:"28px",
+  }
 }
-}
+
+
 
 const inputstyle = {
-  padding:"6px 10px", fontSize:"14px" , 
+    padding:"6px 10px", fontSize:"14px" , 
 }

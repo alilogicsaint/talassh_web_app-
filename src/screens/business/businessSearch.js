@@ -104,7 +104,7 @@ export default function BusinessSearch() {
 
      
   </Grid>
-  <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"0px 150px 40px 150px"}} >
+  <Grid item xs={12} sm={12}  md={12}  lg={12} sx={{margin:"20px 150px 40px 150px"}} >
    <HomeButton/>  
   </Grid>
     

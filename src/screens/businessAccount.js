@@ -6,6 +6,8 @@ import { Navbar } from '../components/navBar';
 import { Box } from '@mui/system'
 import Footer from '../components/footer';
 import MathValidation from '../components/MathValidation';
+import HomeButton from '../components/buttons/homeButton';
+import CommonBtn from '../components/buttons/Commonbtn';
 // import MathValidation from '../components/MathValidatiobn/MathValidation'
 
 
@@ -65,7 +67,7 @@ export default function BusinessAccount() {
         }} >
           
     <img 
-    style={{width:"75%",height:"120px"}}  
+    style={{width:"65%",height:"100px"}}  
     src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
         <TextField   
             color="warning"  
@@ -240,39 +242,13 @@ export default function BusinessAccount() {
          }}> Submit
       </Button>
           
-      <Button 
-         variant="contained"  
-         sx={{backgroundColor:"#FFC619",
-             '&:hover': { backgroundColor: '#FFC619', opacity: [0.9, 0.8, 0.7],},
-          }}> BusinessAccount 
-      </Button>
-            
-      <Button 
-          variant="contained"  
-          sx={{backgroundColor:"#F37825",
-               '&:hover': { backgroundColor: '#F37825', opacity: [0.9, 0.8, 0.7],},
-              }} > Talaash Agent Account
-      </Button> 
+      <CommonBtn color={"#FFC619"} link={"/Customer_Account"} textvalue={"Customer Account"} widthval={"100%"} />     
+      <CommonBtn color={"#F37825"} link={"/Agent_Account"} textvalue={"Agent Account"} widthval={"100%"} /> 
 
       </Box>
 
-      <Box  
-        sx={{ 
-          display:"flex",
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center", 
-          mt:1,  
-             }} >
-          <Button
-             variant="contained" 
-             sx={{ 
-              clipPath: "polygon(100% 0%, 100% 50%, 100% 100%, 18% 100%, 0 50%, 18% 0)",
-              width:150,
-              backgroundColor:"#040404",
-              '&:hover': { backgroundColor: '#040404', opacity: [0.9, 0.8, 0.7],},
-              }}>Home
-          </Button> 
+      <Box  sx={{ mt:1 }} >
+          <HomeButton/>
       </Box> 
     </Grid>
       </Box> 
