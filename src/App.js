@@ -15,6 +15,7 @@ import HelperEntry from "./screens/laberHelper/HelperEntery";
 import HelperSearch from "./screens/laberHelper/HelperSearch";
 import Login from "./screens/login";
 import MySlider from "./components/slider/slider";
+import './App.css'
 
 export default function BasicExample() {
   return (

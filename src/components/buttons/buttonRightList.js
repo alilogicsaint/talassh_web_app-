@@ -76,6 +76,7 @@ export default function ButtonRightList() {
             variant="contained"   
             size='large' 
             sx={{...btnsleft.common,  backgroundColor:"#112F6D",'&:hover': { backgroundColor: '#112F6D', opacity: [0.9, 0.8, 0.7],}   }}>
+              
               کتب خانہ</Button>
           </Box>
         

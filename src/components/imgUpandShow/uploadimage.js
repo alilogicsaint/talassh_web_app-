@@ -7,6 +7,7 @@ export const ImageUpload = (props) => {
     const controlheight  = props.Cheight
     const controlwidth   = props.CWidth
     const placeholderImg = props.imgLink
+    const bgSiz= props.objectFit == null?"cover":props.objectFit;
 
     const [selectedFile, setSelectedFile] = useState()
     const [preview, setPreview] = useState()
@@ -50,7 +51,9 @@ export const ImageUpload = (props) => {
             cursor: "pointer",
             backgroundImage:`url(${process.env.PUBLIC_URL+ preview})`,
             backgroundRepeat: "no-repeat",
-            backgroundSize:"cover", 
+            objectFit:bgSiz,
+            backgroundSize:bgSiz, 
+            backgroundPosition:"center" 
             }} > 
             <input  type='file'  onChange={onSelectFile} style={{display:"none"}}/>
             </label>
@@ -64,7 +67,9 @@ export const ImageUpload = (props) => {
             cursor: "pointer",
             backgroundImage:`url(${process.env.PUBLIC_URL+ placeholderImg })`,
             backgroundRepeat: "no-repeat",
-            backgroundSize:"cover", 
+            objectFit:bgSiz,
+            backgroundSize:bgSiz,
+            backgroundPosition:"center" 
             }} > 
             <input  type='file'  onChange={onSelectFile} style={{display:"none"}}/>
             </label> }

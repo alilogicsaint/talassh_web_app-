@@ -1,10 +1,9 @@
-import { Input, TextField, Typography } from '@mui/material'
-import { borderRadius, Box, display } from '@mui/system'
+import {  TextField, } from '@mui/material'
+import {  Box,  } from '@mui/system'
 import React, { useState } from 'react'
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
-import { green } from '@mui/material/colors';
 import $ from 'jquery';
-import "../components/Animations/shake.css"
+import 'animate.css';
 
 export default function MathValidation() {
 
@@ -22,7 +21,11 @@ export default function MathValidation() {
     // if(signpick == "-"){total= num1-num2;}
     total= num1+num2;
     e == total? setCheck(true):setCheck(false)
-    check?$(".divnum").css("border-color","orange"):$(".divnum").css({"border-color":"red"})
+    check?
+    $(".divnum").css("border-color","orange")
+    :
+    $(".divnum").css(Style.Shake)
+    $(".divnum").toggleClass("animate__animated animate__headShake ")
   }  
   
     return (
@@ -57,7 +60,7 @@ export default function MathValidation() {
             {num2}
           </p>
         </div>
-        <div className='divnum' style={{display:"flex", alignItems: "center", padding: "5px 10px" ,fontSize:25, }}>
+        <div className={check ? Style.shake : null} style={{display:"flex", alignItems: "center", padding: "5px 10px" ,fontSize:25, }}>
           <p style={{margin:"0 auto"}}>
             =
           </p>
@@ -89,10 +92,33 @@ const Style = {
   fontFamily: "Sans-Serif",
   fontSize:28,
   textAlign:"center",
-  borderRadius:10,} ,
+  borderRadius:10,
+  } ,
   ptag:{
       margin:"12px auto 0px ",
       width:'fit-content',
       alignItems:"center"
-  }
+  },
+  Shake: {
+      animation: '$description 1s',
+      color: "black",
+      border: "3px solid red",
+      width:51,
+      height:51,
+      margin:"0px 5px" ,
+      padding:2,
+      fontFamily: "Sans-Serif",
+      fontSize:28,
+      textAlign:"center",
+      borderRadius:10,
+    },
+  "@keyframes description": {
+      "0%": { opacity: 0, transform: "translateY(0)" },
+      "15%": { transform: "translateY(-4px, 0)" },
+      "30%": { transform: "translateY(6px, 0)" },
+      "45%": { transform: "translateY(-4px, 0)" },
+      "60%": { transform: "translateY(6px, 0)" },
+      "100%": { opacity: 1, transform: "translateY(0)" }
+    }
+  
 };

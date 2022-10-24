@@ -8,7 +8,8 @@ import Footer from '../components/footer';
 import MathValidation from '../components/MathValidation';
 import HomeButton from '../components/buttons/homeButton'
 import CommonBtn from '../components/buttons/Commonbtn';
-
+import profilePlaceholder from '../Assets/images/400X400placeholder.png'
+import { ImageUpload } from '../components/imgUpandShow/uploadimage';
 
 
 export default function CustomerAccount() {
@@ -138,17 +139,37 @@ export default function CustomerAccount() {
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1,mb:2 }}
             placeholder="Nearest Famous Place "
          />
-        <TextareaAutosize
-            color="warning"  
-            minRows={3}  
-            placeholder=" Street Address "  
-         />
-         <Box height={20} ></Box>
-        <TextareaAutosize   
-         color="warning"  
-            minRows={4}   
-            placeholder=" Google Maps Link  "  
-         />
+        <Box height={15} ></Box>
+         <TextareaAutosize   
+                minRows={3} 
+                input 
+                placeholder=" Street Address " 
+                style={{    
+                  border: "0px ",
+                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
+                  width: "95.5%",
+                  margin: "0px 1px",
+                  borderRadius: "3px",
+                  outline: "none",
+                  height: "48px",
+                  padding: "5px"
+                }} 
+             />
+             <Box height={15} ></Box>
+            <TextareaAutosize   
+                minRows={4}   
+                placeholder=" Google Maps Link  " 
+                style={{    
+                  border: "0px ",
+                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
+                  width: "95.5%",
+                  margin: "0px 1px",
+                  borderRadius: "3px",
+                  outline: "none",
+                  height: "48px",
+                  padding: "5px"
+                }}  
+             />
     </Box>
   </Grid>
 
@@ -164,9 +185,17 @@ export default function CustomerAccount() {
          </h3>
       </div>
 
-        <img 
-        style={{width:"70%",height:"10%"}}  
-        src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />
+      <Box  sx={{ 
+                width:  "30vh",
+                height: "30vh",
+                margin: "0px 0px",   
+                // border: "2px solid gray",
+                boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
+             }} >
+
+            <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={profilePlaceholder} />
+             
+             </Box>
        
     <Box  sx={{ 
           display: "flex",

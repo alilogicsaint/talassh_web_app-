@@ -11,11 +11,8 @@ import Person3SharpIcon from '@mui/icons-material/Person3Sharp';
 import { useNavigate } from 'react-router';
 
 
-
-
-
-
-export default function ButtonLeftlist() {
+export default function ButtonLeftlist(props) {
+   const Chwidth  = props.CHWidth;
 
   const navigate = useNavigate();
 
@@ -31,7 +28,7 @@ export default function ButtonLeftlist() {
       display:"flex",
       justifyContent:"center", 
       flexDirection:"Column",
-      width:"100%"  
+      width:Chwidth  
      }}>
 
            <Button 

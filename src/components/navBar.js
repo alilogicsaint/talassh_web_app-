@@ -30,12 +30,9 @@ export const Navbar = (props) => {
         {...other}>
       <Toolbar
         disableGutters
-        sx={{left: 0, px: 6}}
+        sx={{left: 0, px: 5}}
         backgroundColor={{  backgroundColor:"#ffff", }}
       >
-          <IconButton onClick={onSidebarOpen} sx={{ display: {  xs: 'inline-flex',  lg: 'none' } }}>
-           <MenuIcon fontSize="small" />
-          </IconButton>
           <Link to="/"  style={{color:"white",textDecoration: "none" }}>
           <div style={{display:'flex',alignItems:"flex-end",}}>
             <p style={navBarStyle.heading} >Talash</p><p style={navBarStyle.subHeading} >.com</p> 
@@ -55,9 +52,7 @@ export const Navbar = (props) => {
   );
 }
 
-Navbar.propTypes = {
-  onSidebarOpen: PropTypes.func
-};
+
 
 
 
@@ -69,7 +64,7 @@ const navBarStyle = {
     fontWeight:300,
     height:90
   },
-  heading:{ fontSize:"40px",
+  heading:{ fontSize:"38px",
   margin:"0px auto",
   padding:"11px 0px",
   },

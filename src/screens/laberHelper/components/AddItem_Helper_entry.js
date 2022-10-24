@@ -2,9 +2,8 @@ import { Button, Grid, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { ImageUpload } from '../../../components/imgUpandShow/uploadimage'
-import profilePlaceholder from '../../../Assets/images/400X400placeholder.png'
 
-export default function AddItem_Expert_entry() {
+export default function AddItem_Helper_entry() {
   return (
    <div>
    <Grid item container xs={12}  sx={{justifyContent:"space-around"}}>
