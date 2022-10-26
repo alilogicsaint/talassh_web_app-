@@ -1,8 +1,8 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 
-export default function CommonNavBtn(props) {
+export default function CommonRowBtn(props) {
     const FlexD = props.FlexD
     const DynColor  = props.dyn_Color 
     const DynWidth  = props.dyn_Width
@@ -18,6 +18,11 @@ export default function CommonNavBtn(props) {
     function  handleClick () { 
       navigate(btnval);
     } 
+    
+    
+    
+    
+    console.log(btnval)
 
   return ( 
     <Button 
@@ -31,11 +36,11 @@ export default function CommonNavBtn(props) {
             ...btnsleft.common,
             minWidth: DynWidth,
             height: Dynheight,
-            backgroundColor: urlElements == btnval ? "black": DynColor,
-            '&:hover': { backgroundColor: urlElements == btnval ? "black": DynColor, 
+            backgroundColor: urlElements === btnval ? "black": DynColor,
+            '&:hover': { backgroundColor: urlElements === btnval ? "black": DynColor, 
             opacity: [0.9, 0.8, 0.7],},
             flexDirection:  `${FlexD}`,
-            padding:" 24px 5px",
+            padding:"auto  25px",
             }}>
       {btnText}
     </Button> 

@@ -17,7 +17,7 @@ export default function CenterButton() {
     <div className="" style={{textAlign:"center",}}>
     <ButtonGroup
        orientation="vertical"
-       sx={{width:270 ,mt:8 }}
+       sx={{width:"330px" ,mt:8 }}
       >
         <Button 
         variant="contained"   

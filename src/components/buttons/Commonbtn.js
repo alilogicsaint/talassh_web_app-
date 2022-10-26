@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 export default function CommonBtn(props) {
    
-  const Color = props.color
+    const Color = props.color
     const value = props.link
     const text = props.textvalue
     const valwidth =props.widthval
@@ -22,7 +22,8 @@ export default function CommonBtn(props) {
           fullWidth  
           value={value}
           onClick={(e)=>{handleClick(e.target.value)}}
-          sx={{backgroundColor:Color,
+          sx={{ fontSize:'14px',
+               backgroundColor:Color,
               '&:hover': { backgroundColor: Color, opacity: [0.9, 0.8, 0.7],  },
             }}> {text}
        </Button>

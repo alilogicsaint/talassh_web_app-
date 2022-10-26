@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigation } from "react-router-dom";
 import AgentAccount from "./screens/AgentAccount";
 import BusinessAccount from "./screens/businessAccount";
 import BusinessEntery from "./screens/business/BusinessEntery";
@@ -18,6 +18,7 @@ import MySlider from "./components/slider/slider";
 import './App.css'
 
 export default function BasicExample() {
+ 
   return (
     <Provider store={store}>
     <Routes>
@@ -36,6 +37,7 @@ export default function BasicExample() {
       <Route path="Helper_Search" element={<HelperSearch/>} />
       <Route path="login" element={<Login/>} />
       <Route path="Slider" element={<MySlider/>} />
+   
     </Routes>
 
   </Provider>

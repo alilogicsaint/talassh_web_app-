@@ -2,7 +2,8 @@ import { Box, Button } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router';
 
-export default function HomeButton() {
+export default function HomeButton(props) {
+    const widthValue = props.widthVal
     const navigate = useNavigate();
 
     function handleClick(e) {
@@ -10,10 +11,12 @@ export default function HomeButton() {
     }  
   return (
     <Box  sx={{ 
+           width:widthValue,
            display:"flex",
            justifyContent: "center",
            alignContent: "center",
-           alignItems: "center",   
+           alignItems: "flex-start",
+          
           }}>
 <Button
     variant="contained" 

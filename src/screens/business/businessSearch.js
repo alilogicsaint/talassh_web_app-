@@ -1,20 +1,19 @@
-import { Box, Button, Grid, TextField,  } from '@mui/material'
+import { Box, Grid, TextField,  } from '@mui/material'
 import React from 'react'
 import ButtonLeftlist from '../../components/buttons/buttonLeftlist'
 import ButtonRightList from '../../components/buttons/buttonRightList'
 import Footer from '../../components/footer'
 import { Navbar } from '../../components/navBar'
-import { useEffect, useState  } from 'react'
+import { useEffect} from 'react'
 import { useSelector,useDispatch  } from 'react-redux'
 import {getTabledata} from '../../store/action'
-import DataTable from './components/dataTableSearch'
 import DataTableSearch from './components/dataTableSearch'
-
-import { useNavigate } from 'react-router'
 import HomeButton from '../../components/buttons/homeButton'
 import Mobilebtn from '../../components/buttons/navbtn/mobilebtn'
 import NavBtnLeft from '../../components/buttons/navbtn/navBtnLeft'
 import NavBtnRight from '../../components/buttons/navbtn/navBtnRight'
+
+import AdvertisBox from '../../components/AdvertisBox'
 
 export default function BusinessSearch() {
   const TabledataBusinessSearch = ["S.no",
@@ -37,8 +36,6 @@ export default function BusinessSearch() {
 
 
 
-   
-
   return (
   
 <>
@@ -60,65 +57,74 @@ export default function BusinessSearch() {
     <Grid item xs={12} sm={8}  md={7.9} lg={7.9}  >               
         <Grid item xs={12} sm={12} md={12}  lg={12} >
              <Box sx={{p:2 }} >
-                <Box sx={{ display:"flex", justifyContent:"center",width:"100%" }}>
+                
+              <Grid xs item container direction="row" sx={{justifyContent: "center"}} >
+                    <AdvertisBox  
+                    Ads={"Advertisement"} 
+                    d_Width={"100%"} 
+                    d_height={"100px"} 
+                    d_color={"#5B9BD5"}
+                    />
                     <div  style={mystyle.heading} >
                         <h2 style={mystyle.htag}>Business Search</h2>
                     </div>
-                 </Box>
-                <Grid xs item container direction="row"  >
-                  <Grid xs direction="column" sx={{p:2 }}  >
+                  <Box sx={{ display:"flex", justifyContent:"center",width:"100%" ,flexWrap:"wrap",ml:15,mr:15}}>
+                  
+                  <Grid xs direction="column"   >
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="shop Name" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Hardware" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Hammers" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Item Name" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Model" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
-                      </Grid>
-                      <Grid xs direction="column" sx={{p:2 }} >
+                         sx={mystyle.textfiedld} />
+                  </Grid>
+
+                  <Grid xs direction="column"  >
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Province / Estate" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="Chakwal" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
+                         sx={mystyle.textfiedld} />
                       <TextField fullWidth  color="warning" inputProps={{style:inputstyle}}  placeholder="UC/ VC/ Main Area" 
-                         sx={{ mt:1, boxShadow: 3 ,borderRadius:1 ,p:0 }} />
-                      </Grid> 
-                </Grid>
-           
-                <Box sx={{ display:"flex", justifyContent:"center",width:"100%",pt:20 }}>
-                      <div  style={mystyle.heading} >
-                        <h2 style={mystyle.htag2}>Search Result</h2>
-                      </div>
-                </Box>          
+                         sx={mystyle.textfiedld} />
+                  </Grid> 
+
+                  </Box>
+
+              </Grid>
+
              </Box>
          </Grid>
     </Grid>
     <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
     <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
-
-      
-   
+ 
    <Grid  item xs={12} sm={12}  md={12}  lg={12} sx={sections}>
-           <DataTableSearch data={TabledataBusinessSearch} tabledata={state} forRowData={rowDdata} />
+   
+                      <div  style={mystyle.heading} >
+                        <h2 style={mystyle.htag2}>Search Result</h2>
+                      </div>
+   <Box sx={{ display:"flex", justifyContent:"center",width:"100%",}}>
+       <DataTableSearch data={TabledataBusinessSearch} tabledata={state} forRowData={rowDdata} />
+   </Box> 
+          
    </Grid>
-
      
   </Grid >
   <Grid item xs={12} sm={12}  md={12}  lg={12} sx={sections3} >
+
    <HomeButton/>  
   </Grid>
     
 <Footer/>
-    
-      
+          
       </>
 
   )
 }
-
 
 const mystyle = {
     img:{
@@ -132,6 +138,7 @@ const mystyle = {
         fontSize:"28px",
         padding:"5px",
         alignItems: "flex-end",
+        justifyContent:"center"
     },
     img2:{
         width:"94%",
@@ -144,14 +151,18 @@ const mystyle = {
     htag2:{
       margin:"0 auto",
       fontSize:"28px",
+  },
+  textfiedld:{
+     m:1,
+     borderRadius:1 ,
+     minWidth:"280px",  
+     maxWidth:"320px",
   }
 }
 
 const inputstyle = {
     padding:"6px 10px", fontSize:"14px" , 
 }
-
-
 
 const hidbtnTabeMode={
   '@media (min-width:480px)and (max-width:880px)' : {
@@ -161,7 +172,6 @@ const hidbtnTabeMode={
     display:"none",
   } 
 }
-
 
 const hidbtnWebMode={
   '@media (min-width:880px)and (max-width:2470px)' : {

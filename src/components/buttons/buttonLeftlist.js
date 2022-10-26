@@ -1,5 +1,5 @@
 
-import { Box, Button,ButtonGroup, } from '@mui/material';
+import { Box, Button, } from '@mui/material';
 import React from 'react'
 import BusinessIcon from '@mui/icons-material/Business';
 import EngineeringIcon from '@mui/icons-material/Engineering';
@@ -9,17 +9,19 @@ import { SiHappycow } from "react-icons/si";
 import { FaChalkboardTeacher  } from "react-icons/fa";
 import Person3SharpIcon from '@mui/icons-material/Person3Sharp';
 import { useNavigate } from 'react-router';
+import CommonRowBtn from './L_R_ComonBtn';
+
 
 
 export default function ButtonLeftlist(props) {
    const Chwidth  = props.CHWidth;
-
-  const navigate = useNavigate();
-
-  function handleClick(e) {
-    navigate(e);
-  } 
-
+   
+  //  const navigate = useNavigate();
+  // function handleClick(e) {
+   
+  //   navigate(e);
+  // } 
+  
   return (
     
     <Box
@@ -31,67 +33,60 @@ export default function ButtonLeftlist(props) {
       width:Chwidth  
      }}>
 
-           <Button 
-           endIcon={<BusinessIcon/>} 
-           variant="contained"  
-           size='large'
-           value="/Business_Entery"
-           onClick={(e)=>{handleClick(e.target.value)}}
-           sx={{ ...btnsleft.common, backgroundColor:"#FFC294",'&:hover': { backgroundColor: '#FFC294', opacity: [0.9, 0.8, 0.7],},}}>کاروبر</Button>
+           <CommonRowBtn dyn_Color= {"#FFC294"} dyn_Width={"90%"} dyn_height={"100%"} 
+           dyn_btnText={"کاروبر"}  
+           dyn_Value={"/Business_Entery"} 
+           FlexD={"row"}
+           dyn_endIcons={<BusinessIcon/>}  />
            
            
-           <Button endIcon={<EngineeringIcon/>}
-           value="/Expert_Entery"
-           onClick={(e)=>{handleClick(e.target.value)}} 
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#89CAFF",'&:hover': { backgroundColor: '#89CAFF', opacity: [0.9, 0.8, 0.7], } , }}>  کاریگر</Button>
+           <CommonRowBtn dyn_Color= {"#89CAFF"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"کاریگر"}  
+                    dyn_Value={"/Expert_Entery"} 
+                    FlexD={"row"}
+                    dyn_endIcons={<EngineeringIcon/>}  />
 
-           <Button 
-            endIcon={<HomeRepairServiceIcon/>}
-            value="/Helper_Entry"
-            onClick={(e)=>{handleClick(e.target.value)}}
-            variant="contained"   
-            size='large' 
-            sx={{...btnsleft.common, backgroundColor:"#588539",'&:hover': { backgroundColor: '#588539', opacity: [0.9, 0.8, 0.7], } , }}>مزدورہیلپر</Button>
-           
-           <Button 
-            endIcon={<GiBlockHouse/>}  
-            variant="contained"   
-            size='large' 
-            sx={{...btnsleft.common, backgroundColor:"#AFBBCB",'&:hover': { backgroundColor: '#AFBBCB', opacity: [0.9, 0.8, 0.7], } , }}>
-            گھریلوسامان</Button>
-           
-           <Button 
-           endIcon={<SiHappycow/>}
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#FFC106",'&:hover': { backgroundColor: '#FFC106', opacity: [0.9, 0.8, 0.7], }  }}>
-            مالمویشی</Button>
-           <Button 
-           endIcon={<Person3SharpIcon/>}
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#06B354",'&:hover': { backgroundColor: '#06B354', opacity: [0.9, 0.8, 0.7], }  }}>
-            عالم ومفتی</Button>
-           <Button 
-           endIcon={<FaChalkboardTeacher/>} 
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#0773C0",'&:hover': { backgroundColor: '#0773C0', opacity: [0.9, 0.8, 0.7], }  }}>
-            امام حافظ و قاری</Button>
-           <Button 
-           endIcon={<GiTeacher></GiTeacher>}
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#8446B2",'&:hover': { backgroundColor: '#8446B2', opacity: [0.9, 0.8, 0.7], } }}>
-            اساتزہکرام</Button>
-          <Button
-            endIcon={<GiWantedReward />} 
-           variant="contained"   
-           size='large' 
-           sx={{...btnsleft.common, backgroundColor:"#C70F0F",'&:hover': { backgroundColor: '#C70F0F', opacity: [0.9, 0.8, 0.7], }}}>
-            تلاش گمشدہ</Button>
+      <CommonRowBtn dyn_Color= {"#588539"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"مزدورہیلپر"}  
+                    dyn_Value={"/Helper_Entry"} 
+                    FlexD={"row"}
+                    dyn_endIcons={<HomeRepairServiceIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#AFBBCB"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"گھریلوسامان"}  
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<GiBlockHouse/>}  />
+
+      <CommonRowBtn dyn_Color= {"#FFC106"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"مالمویشی"}  
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<SiHappycow/>}  />
+
+      <CommonRowBtn dyn_Color= {"#06B354"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"عالم ومفتی"}  
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<Person3SharpIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#0773C0"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"امام حافظ و قاری"}  
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<FaChalkboardTeacher/>}  />
+
+      <CommonRowBtn dyn_Color= {"#8446B2"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={"اساتزہکرام"} 
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<GiTeacher/>}  />
+
+      <CommonRowBtn dyn_Color= {"#C70F0F"} dyn_Width={"90%"} dyn_height={"100%"} 
+                    dyn_btnText={" تلاش گمشدہ"} 
+                    dyn_Value={" "} 
+                    FlexD={"row"}
+                    dyn_endIcons={<GiWantedReward/>}  /> 
          </Box>    
         
      

@@ -9,7 +9,7 @@ export default function AddItem_Helper_entry() {
    <Grid item container xs={12}  sx={{justifyContent:"space-around"}}>
 
    <Grid xs={12}  sm={6} md={6} lg={3}>
-      <Box  sx={{width:"90%",padding:"10px" }}>
+      <Box  sx={{width:"94%",padding:"10px" }}>
           <TextField 
              fullWidth  
              color="warning"  
@@ -35,7 +35,7 @@ export default function AddItem_Helper_entry() {
    </Grid>
    
    <Grid xs={12}  sm={6} md={6} lg={3}>
-   <Box  sx={{width:"90%",padding:"10px" }}>
+   <Box  sx={{width:"94%",padding:"10px" }}>
           <TextField  
              fullWidth  
              color="warning"  
@@ -60,19 +60,20 @@ export default function AddItem_Helper_entry() {
    </Box>
    </Grid>
    
-   <Grid xs={12}  sm={5} md={5} lg={3} >
+    
+   <Grid xs={12}  sm={6} md={6} lg={3} >
        <Box sx={{
-           margin:"0px" 
+           margin:"0px 10px 0px 10px"
+
        }}>
           <Box  sx={{ 
                width:"100%",
-               height:"140px",
-               
+               height:"140px",       
                display: "flex",
                  alignContent: "center",
                  alignItems: "center",   
                // border: "2px solid gray",
-               boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
+               boxShadow: " rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;"           
             }} >
 
            <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={"https://new.kani.ge/upload/noimage.jpg"}  objectFit={"cover"}  />
@@ -82,7 +83,7 @@ export default function AddItem_Helper_entry() {
    </Grid>
 
    
-   <Grid xs={12}  sm={6} md={5} lg={3}
+   <Grid xs={12}  sm={6} md={6} lg={3}
         sx={{
            display:'flex',
            flexDirection:"column", 

@@ -10,6 +10,8 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 
+import CommonRowBtn from './L_R_ComonBtn';
+
 
 export default function ButtonRightList() {
   return (
@@ -22,62 +24,74 @@ export default function ButtonRightList() {
              flexDirection:"column",
              justifyContent:"center",
              width:"100%" 
-            }} 
-        >
-            <Button 
-            startIcon={<Diversity1Icon/>} 
-            variant="contained" 
-            size='large'  
-            sx={{ ...btnsleft.common,  backgroundColor:"#F9BC00",'&:hover': { backgroundColor: '#F9BC00', opacity: [0.9, 0.8, 0.7],}   }}>
-              ضرورت رشتہ</Button>
-            <Button 
-            startIcon={<LocalTaxiIcon/>} 
-            variant="contained"   
-            size='large' 
-            sx={{ ...btnsleft.common,  backgroundColor:"#8446B2",'&:hover': { backgroundColor: '#8446B2', opacity: [0.9, 0.8, 0.7], }  }}>
-              ٹرانسپورٹ</Button>
-            <Button 
-            startIcon={<SmartphoneIcon/>} 
-            variant="contained"   
-            size='large' 
-            sx={{ ...btnsleft.common,  backgroundColor:"#204D77",'&:hover': { backgroundColor: '#204D77', opacity: [0.9, 0.8, 0.7], }  }}>
-              موبائیل</Button>
-            <Button 
-           startIcon={<DirectionsCarIcon/>} 
-           variant="contained"   
-           size='large' 
-           sx={{ ...btnsleft.common,  backgroundColor:"#7C7C7C",'&:hover': { backgroundColor: '#7C7C7C', opacity: [0.9, 0.8, 0.7], }  }}>
-              گاڑیاں</Button>
-            <Button 
-           startIcon={<GiteIcon/>} 
-           variant="contained"   
-           size='large' 
-           sx={{ ...btnsleft.common,  backgroundColor:"#826409",'&:hover': { backgroundColor: '#826409', opacity: [0.9, 0.8, 0.7], }  }}>
-              مکان</Button>
-            <Button 
-            startIcon={<StoreMallDirectoryIcon sx={{ml:1}}/> } 
-            variant="contained"   
-            sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1, justifyContent:"space-between" ,  backgroundColor:"#C15811",'&:hover': { backgroundColor: '#C15811', opacity: [0.9, 0.8, 0.7], }  }}>
-              دکان</Button>
-            <Button 
-            startIcon={<ApartmentIcon/>} 
-            variant="contained"   
-            size='large' 
-            sx={{boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1, justifyContent:"space-between" ,  backgroundColor:"#A5CB8B",'&:hover': { backgroundColor: '#A5CB8B', opacity: [0.9, 0.8, 0.7], }  }}>
-              ذمین</Button>
-              <Button 
-            startIcon={<AddAPhotoIcon/>} 
-            variant="contained"   
-            size='large' 
-            sx={{ ...btnsleft.common,  backgroundColor:"#EDBD2B",'&:hover': { backgroundColor: '#EDBD2B', opacity: [0.9, 0.8, 0.7],}   }}>
-              مشہورجگہ</Button>
-            <Button 
-            startIcon={<LocalLibraryIcon/>} 
-            variant="contained"   
-            size='large' 
-            sx={{...btnsleft.common,  backgroundColor:"#112F6D",'&:hover': { backgroundColor: '#112F6D', opacity: [0.9, 0.8, 0.7],}   }}>
-              
-              کتب خانہ</Button>
+            }} >
+           
+            <CommonRowBtn 
+      dyn_Color= {"#F9BC00"} 
+      dyn_Width={"90%"} dyn_height={"100%"}
+      dyn_btnText={"ضرورت رشتہ"}  
+      dyn_Value={""}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<Diversity1Icon/>}/>
+           
+           <CommonRowBtn 
+      dyn_Color= {"#8446B2"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={"ٹرانسپورٹ"}  
+      dyn_Value={""} 
+      FlexD={"row-reverse"}
+      dyn_endIcons={<LocalTaxiIcon/>}  />
+
+      <CommonRowBtn 
+      dyn_Color= {"#204D77"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={"موبائیل"}  
+      dyn_Value={""} 
+      FlexD={"row-reverse"}
+      dyn_endIcons={<SmartphoneIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#7C7C7C"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={"گاڑیاں"}  
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<DirectionsCarIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#826409"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={"مکان"}  
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<GiteIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#C15811"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={"دکان "}  
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<StoreMallDirectoryIcon sx={{ml:1}}/>}  />
+
+      <CommonRowBtn dyn_Color= {"#0773C0"} 
+       dyn_Width={"90%"} dyn_height={"100%"}
+      dyn_btnText={" ذمین "}  
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<ApartmentIcon/>}  />
+
+      <CommonRowBtn dyn_Color= {"#EDBD2B"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={" مشہورجگہ "} 
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<AddAPhotoIcon/>}  />
+
+      <CommonRowBtn 
+      dyn_Color= {"#112F6D"} 
+       dyn_Width={"90%"} dyn_height={"100%"} 
+      dyn_btnText={" کتب خانہ "} 
+      dyn_Value={" "}
+      FlexD={"row-reverse"} 
+      dyn_endIcons={<LocalLibraryIcon/>}  />
           </Box>
         
   )
@@ -87,6 +101,8 @@ export default function ButtonRightList() {
 const btnsleft={
   common:{
     fontFamily:"'Noto Nastaliq Urdu', serif;", 
-    boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)", m: 1 , justifyContent:"space-between"   , 
+    boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)",
+    m: 1 ,
+    justifyContent:"space-between"   , 
   }
 }
