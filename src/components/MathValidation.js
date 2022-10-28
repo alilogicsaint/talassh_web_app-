@@ -25,7 +25,7 @@ export default function MathValidation() {
     $(".divnum").css("border-color","orange")
     :
     $(".divnum").css(Style.Shake)
-    $(".divnum").toggleClass("animate__animated animate__headShake ")
+    $(".divnum").toggleClass("animate__animated animate__headShake")
   }  
   
     return (

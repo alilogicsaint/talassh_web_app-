@@ -19,6 +19,8 @@ import NavBtnLeft from '../../components/buttons/navbtn/navBtnLeft';
 import Mobilebtn from '../../components/buttons/navbtn/mobilebtn';
 import { useNavigation } from 'react-router';
 import MapGoogle from '../../components/map';
+import HeadingsMain from '../../components/headings/heading';
+import SubHeadings from '../../components/headings/subheading';
 
 
 export default function BusinessEntery() {
@@ -55,25 +57,16 @@ export default function BusinessEntery() {
     
     <Grid container xs={12} sm={8} md={8}  lg={7.9} sx={{mt:5 }}  > 
         <Box sx={{ml:1,mr:1,boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)" ,display:"flex",flexWrap:'wrap' ,p:1,alignContent: "flex-start" }}>
-      
-          <p style={{
-             fontSize:"30px",
-             fontWeight:"bold",
-             textAlign:"center",
-             padding:"10px",
-             width:"100%",
-             height:"50px",
-             margin:"0 auto"
-              }}>
-            Business (کاروبار)
-          </p>
-      
-         <Grid item xs={12} sm={12} md={4}  lg={7} >
+        
+        <HeadingsMain h_vlaue={"Business "} h_urdu={"(کاروبار)"} />
+          
+         <Grid item xs={12} sm={12} md={7}  lg={7} >
           <Box sx={{p:1 }} >
                 <Box sx={{ display:"flex", justifyContent:"center",width:"100%",flexWrap: "wrap" }}>
                 <img style={mystyle.img} src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />                   
                 <div  style={mystyle.heading} >
-                    <h2 style={mystyle.htag}>Mani Fani Food Point</h2>
+                    <SubHeadings subheadingvlaue={"Mani Fani Food Point"} />
+                    
                 </div>
                 </Box>
              <Grid  item container direction="row"  sx={{p:1,mt:1 }}>
@@ -97,7 +90,7 @@ export default function BusinessEntery() {
         </Grid>
         
 
-        <Grid item xs={12} sm={12}  md={4}  lg={5} >
+        <Grid item xs={12} sm={12}  md={5}  lg={5} >
              
              <Box sx={{
               alignItems: "center",
@@ -125,9 +118,7 @@ export default function BusinessEntery() {
        
     <Grid item xs={12} sm={12}  md={12}  lg={12} sx={sections} >
               <div style={mystyle.heading}>
-                <h1 style={mystyle.htag} >
-                    Add New Item
-                </h1>
+              <HeadingsMain h_vlaue={"Add New Item "} h_urdu={" "} />
               </div>
              <Box >
               <AddItem_Business_entry/>
@@ -136,9 +127,7 @@ export default function BusinessEntery() {
 
     <Grid item xs={12} sm={12}  md={12}  lg={12} sx={sections}    >
               <div style={mystyle.heading}>
-                <h1 style={mystyle.htag} >
-                   Existing Items Data
-                </h1>
+              <HeadingsMain h_vlaue={"Existing Items Data"} h_urdu={" "} />
               </div>
              <Box >
               <DataTableEntry/>

@@ -13,17 +13,11 @@ export default function CommonRowBtn(props) {
     const [btnval, setBtnval] = useState(Dynvalue)
     const urlElements = window.location.pathname
     const navigate = useNavigate();
-
-
+    
     function  handleClick () { 
       navigate(btnval);
     } 
     
-    
-    
-    
-    console.log(btnval)
-
   return ( 
     <Button 
       endIcon={endIcons} 

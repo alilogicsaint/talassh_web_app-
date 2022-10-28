@@ -9,6 +9,7 @@ import Footer from '../../components/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTabledata } from '../../store/action';
 import HelperSearchTabl from './components/dataTableSearch';
+import HeadingsMain from '../../components/headings/heading';
 
 
 
@@ -55,9 +56,9 @@ export default function HelperSearch() {
         <Grid item xs={12} sm={12} md={4}  lg={12} >
              <Box sx={{p:2 , pl:20,pr:20 }} >
                 <Box sx={{ display:"flex", justifyContent:"center",width:"100%" }}>
-                    <div  style={mystyle.heading} >
-                        <h2 style={mystyle.htag}>Helper Search</h2>
-                    </div>
+               
+                <HeadingsMain h_vlaue={"Helper Search"} h_urdu={''} />
+                    
                  </Box>
                 <Grid  item container direction="row"  >
                   <Grid xs direction="column" sx={{p:2 }}  >
@@ -83,9 +84,7 @@ export default function HelperSearch() {
                 </Grid>
            
                 <Box sx={{ display:"flex", justifyContent:"center",width:"100%",pt:20 }}>
-                      <div  style={mystyle.heading} >
-                        <h2 style={mystyle.htag2}>Search Result</h2>
-                      </div>
+                <HeadingsMain h_vlaue={"Search Result"} h_urdu={''} />
                 </Box>          
              </Box>
          </Grid>

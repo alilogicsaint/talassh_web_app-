@@ -15,21 +15,21 @@ export default function AddItem_Helper_entry() {
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
              inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
-             placeholder="Full Name"              
+             placeholder="Helper for Expertise"              
           />
           <TextField   
              fullWidth 
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
              inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-             placeholder="Land Line Number "      
+             placeholder="Experience in Years"      
           />
           <TextField  
              fullWidth  
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
              inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-             placeholder="Mobile No"             
+             placeholder="Demanded Salary"             
           />
    </Box>
    </Grid>
@@ -41,22 +41,16 @@ export default function AddItem_Helper_entry() {
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
              inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
-             placeholder="Full Name"              
+             placeholder="Payment Type (D) or (M"              
           />
           <TextField  
              fullWidth  
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
              inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-             placeholder="Land Line Number "      
+             placeholder="Details"      
           />
-          <TextField 
-             fullWidth   
-             color="warning"  
-             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
-             placeholder="Mobile No"             
-          />
+         
    </Box>
    </Grid>
    

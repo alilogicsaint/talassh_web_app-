@@ -15,21 +15,21 @@ export default function AddItem_Expert_entry() {
              fullWidth  
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
+             inputProps={{style:{padding:"7px 10px", fontSize:"14px" , }}}  
              placeholder="Full Name"              
           />
           <TextField   
              fullWidth 
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+             inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
              placeholder="Land Line Number "      
           />
           <TextField  
              fullWidth  
              color="warning"  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+             inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
              placeholder="Mobile No"             
           />
    </Box>

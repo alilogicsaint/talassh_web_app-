@@ -5,6 +5,7 @@ import { AppBar,  Box, IconButton, Toolbar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { color } from '@mui/system';
+import '../App.css'
 // import Head from 'next/head';
 
 // const NavbarRoot = styled(AppBar)(({ theme }) => ({
@@ -30,19 +31,19 @@ export const Navbar = (props) => {
         {...other}>
       <Toolbar
         disableGutters
-        sx={{left: 0, px: 5}}
+        sx={{left: 0, px: 3}}
         backgroundColor={{  backgroundColor:"#ffff", }}
       >
           <Link to="/"  style={{color:"white",textDecoration: "none" }}>
           <div style={{display:'flex',alignItems:"flex-end",}}>
-            <p style={navBarStyle.heading} >Talash</p><p style={navBarStyle.subHeading} >.com</p> 
+            <p className="headingLogo" >Talash</p><p className='subLogo' >.com</p> 
            </div>
           </Link>
            
           <Box sx={{ flexGrow: 1 }} /> 
           <Link  to="/"    style={{color:"white",textDecoration: "none"}}  >
            <div style={navBarStyle.headingDiv}>
-           <p style={navBarStyle.subHeading} > سب کی سب کیلیے </p><p style={navBarStyle.heading}>تلاش </p> 
+           <p className='subLogo' > سب کی سب کیلیے </p><p className='headingLogo'>تلاش </p> 
            </div>
           </Link>
           
@@ -53,24 +54,14 @@ export const Navbar = (props) => {
 }
 
 
-
-
-
 const navBarStyle = {
   headingDiv:{
-    display:'flex',
-    alignItems:"flex-end",
-    fontFamily:"'Noto Nastaliq Urdu', serif" ,
-    fontWeight:300,
-    height:90
+  display:'flex',
+  alignItems:"flex-end",
+  fontFamily:"'Noto Nastaliq Urdu', serif" ,
+  fontWeight:300,
+  height:90
   },
-  heading:{ fontSize:"38px",
-  margin:"0px auto",
-  padding:"11px 0px",
-  },
-  subHeading:{ 
-  padding: "15px 5px",
-  fontSize:"15px",
-  margin:"0px auto",
- }
+  
+  
 }

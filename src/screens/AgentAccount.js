@@ -11,6 +11,11 @@ import CommonBtn from '../components/buttons/Commonbtn';
 import { ImageUpload } from '../components/imgUpandShow/uploadimage';
 import MySliderSWP from '../components/slider/slider';
 import profilePlaceholder from '../Assets/images/400X400placeholder.png'
+import NavBtnLeft from '../components/buttons/navbtn/navBtnLeft';
+import Mobilebtn from '../components/buttons/navbtn/mobilebtn';
+import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
+import HeadingsMain from '../components/headings/heading';
+import SubHeadings from '../components/headings/subheading';
 
 
 export default function AgentAccount() {
@@ -32,7 +37,6 @@ export default function AgentAccount() {
    }
    
 
-
 return (
   <div>
     <Navbar/>
@@ -41,55 +45,38 @@ return (
          height: 90,
        }}
      />
-  <div style={{ textAlign:"center" }} >
-    <p style={{
-              fontSize:"30px",
-              fontWeight:"bold",
-              textAlign:"center",
-              margin:"0 auto" ,
-              marginBottom:"-36px", 
-            }}>
-       Agent Account
-    </p>
-  </div>
+ 
   
   <Grid container xs direction="row" > 
    
-    <Grid item  xs={12} sm={12}  md={12} lg={2}  > 
-      <ButtonLeftlist/> 
-    </Grid>
+  <Grid item  xs={6} sm={0} md={2}  lg={2} sx={hidbtnTabeMode}> <ButtonLeftlist/> </Grid>
+  <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnLeft/>  </Grid>
+  <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
+    
    
-    <Grid item xs={12} sm={12} md={7}  lg={7.9}  sx={{ }} >
-       <Box 
-         sx={{
-           width:"100%",
-           display:"flex", 
-           justifyContent: "space-evenly", 
-           alignContent: "center",
-           flexDirection: "row",
-           flexWrap:"wrap"}}>
-         <Grid item 
-                 xs={12}  sm={5} md={6} lg={5} 
-                 direction="column" 
-                 sx={{display:"flex" , 
-                 alignItems: "center",
-                 mt:5,pl:2,pr:2  
+  <Grid container xs={12} sm={8} md={8}  lg={7.9} sx={{ mt:5, display: "flex", justifyContent: "center", }}  > 
+
+     <div style={{ textAlign:"center",width:"100%" }} >
+      <HeadingsMain h_vlaue={"Agent Account"} h_urdu={""} />
+     </div>  
+     <Grid item xs={12}  sm={12} md={6} lg={5}  
+          direction="column" 
+          sx={{display:"flex" , alignItems: "center", 
            }}>
-           <Box  sx={{ 
-                 display: "flex",
-                 flexDirection: "column",
-                 justifyContent: "space-between",
-                 height:"100%",
-                 margin: "10px 0px",
-                 width: "80%",
-            }} >
-              <Box  sx={{ 
-                width:  "30vh",
-                height: "30vh",
-                margin: "0px 0px",   
-                // border: "2px solid gray",
-                boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
-             }} >
+          <Box sx={{ 
+           display: "flex",
+           flexDirection: "column",
+           justifyContent: "space-between",
+           margin: "5px 0px",
+           width: "80%",
+          }} >
+          <Box  sx={{ 
+            width:  "30vh",
+            height: "30vh",
+            margin: "0px 0px",   
+            // border: "2px solid gray",
+            boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
+          }} >
 
             <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={profilePlaceholder} />
              
@@ -97,144 +84,132 @@ return (
 
             <TextField 
                 onChange={(e)=>{setFullname(e.target.value)}}
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }}  
-                placeholder="Full Name"  
-                            
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }}  
+                placeholder="Full Name"                          
                  />
             <TextField   
                 onChange={(e)=>{setLinemumber(e.target.value)}}
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Land Line Number "      
              />
             <TextField  
                 onChange={(e)=>{setMobileNo(e.target.value)}} 
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Mobile No"                  
              />
             <TextField  
                 onChange={(e)=>{setWhatsappNo(e.target.value)}}  
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Whatsapp No"                 
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}    
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Email Address"              
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Facebook ID "                 
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Instagram ID"                
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Country"                    
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Province / Estate "     
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="City "                           
              />
-            <TextField   
-                color="warning" sx={mystyle.TextFieldsx} 
-                inputProps={{style:mystyle.TextInSty }} 
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                color="warning" sx={myStyle.TextFieldsx} 
+                inputProps={{style:myStyle.TextInSty }} 
                 placeholder="UC/ VC/ Main Area "    
              />
-            <TextField  
-                color="warning" sx={mystyle.TextFieldsx}
-                inputProps={{style:mystyle.TextInSty }}  
+            <TextField 
+                onChange={(e)=>{setWhatsappNo(e.target.value)}}  
+                color="warning" sx={myStyle.TextFieldsx}
+                inputProps={{style:myStyle.TextInSty }}  
                 placeholder="Nearest Famous Place "
              />
              <Box height={15} ></Box>
-            <TextareaAutosize   
+         <TextareaAutosize   
                 minRows={3} 
                 input 
                 placeholder=" Street Address " 
-                style={{    
-                  border: "0px ",
-                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
-                  width: "95.5%",
-                  margin: "0px 1px",
-                  borderRadius: "3px",
-                  outline: "none",
-                  height: "48px",
-                  padding: "5px"
-                }} 
+                style={myStyle.textarea} 
              />
              <Box height={15} ></Box>
             <TextareaAutosize   
                 minRows={4}   
                 placeholder=" Google Maps Link  " 
-                style={{    
-                  border: "0px ",
-                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
-                  width: "95.5%",
-                  margin: "0px 1px",
-                  borderRadius: "3px",
-                  outline: "none",
-                  height: "48px",
-                  padding: "5px"
-                }}  
+                style={myStyle.textarea}  
              />
          </Box>
   </Grid>
     
-  <Grid item 
-  xs={12}  sm={6} md={6} lg={6} 
+  <Grid item  xs={12}  sm={12} md={6} lg={6} 
   direction="column" 
-  sx={{display:"flex" , alignItems:"center", mt:5,pr:2,pr:2}}>
+  sx={{display:"flex" , alignItems:"center",}}>
     
     <Box  sx={{ 
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 height:"140px",
-                width: "75%",
+                width: "80%",
                 margin: "10px 0px 22px 0px",
              }} >
 
     <TextField   
          color="warning"  
-         inputProps={{style:mystyle.TextInSty }}  
-         sx={mystyle.TextFieldsx } placeholder="CNIC" />
+         inputProps={{style:myStyle.TextInSty }}  
+         sx={myStyle.TextFieldsx } placeholder="CNIC" />
     <TextField   
          color="warning" 
-         inputProps={{style:mystyle.TextInSty }}  
-         sx={mystyle.TextFieldsx } 
+         inputProps={{style:myStyle.TextInSty }}  
+         sx={myStyle.TextFieldsx } 
          placeholder="CNIC Issue Date" />
     <TextField   color="warning" 
-         inputProps={{style:mystyle.TextInSty }} sx={mystyle.TextFieldsx} 
+         inputProps={{style:myStyle.TextInSty }}
+          sx={myStyle.TextFieldsx} 
          placeholder="CNIC Expiry Code" />
     <TextField  
          color="warning" 
-         inputProps={{style:mystyle.TextInSty }} sx={mystyle.TextFieldsx}
+         inputProps={{style:myStyle.TextInSty }}
+          sx={myStyle.TextFieldsx}
          placeholder="Enter Admin Code" />
 
      </Box>
-    <div>
-        <h3>
-        Business Pic Slide Show
-        </h3>
-    </div>
+
+     {/* Sub heading responsive */}
+     <SubHeadings subheadingvlaue={"Business Pic Slide Show"} />
 
   
     <Box  sx={{ 
-          width:"75%",
+          width:"80%",
           height:"170px",
           margin:"0px 0px", 
           boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)" ,               
@@ -244,19 +219,19 @@ return (
           flexDirection:"column",
           justifyContent:"space-between",
           height:"120px",
-          width: "75%",
+          width: "80%",
           margin:"10px 0px",                
         }} >
 
         <TextField   
              color="warning"  
-             inputProps={{style:mystyle.TextInSty }}  
-             sx={mystyle.TextFieldsx } placeholder="User ID" />
+             inputProps={{style:myStyle.TextInSty }}  
+             sx={myStyle.TextFieldsx } placeholder="User ID" />
         <TextField 
             color="warning" 
-            inputProps={{style:mystyle.TextInSty }}  sx={mystyle.TextFieldsx} placeholder="Password" />
+            inputProps={{style:myStyle.TextInSty }}  sx={myStyle.TextFieldsx} placeholder="Password" />
         <TextField   color="warning" 
-            inputProps={{style:mystyle.TextInSty }}  sx={mystyle.TextFieldsx} 
+            inputProps={{style:myStyle.TextInSty }}  sx={myStyle.TextFieldsx} 
             placeholder="Confirm Password" />
         
     </Box>
@@ -269,7 +244,7 @@ return (
                 justifyContent: "center",
                 height: "130px",
                 margin: "22px 0px 0px 0px ",
-                width: "75%",
+                width: "80%",
                 alignContent: "space-around",
                 justifyContent: "space-between",
                 
@@ -290,12 +265,13 @@ return (
       </Box> 
     </Grid>
       
-      </Box> 
+      
   </Grid>
     
-    <Grid item  xs={12} sm={12}  md={12} lg={2} > 
-    <ButtonRightList/>  
-    </Grid>
+    
+  <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
+    <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
+
 
     </Grid>
     
@@ -307,14 +283,94 @@ return (
 
 
 
-const mystyle={
+const myStyle={
   TextFieldsx:{
     mt:1, 
     boxShadow: 3 ,
-    borderRadius:1
+    borderRadius:1,
+    width:'100%'
   },
   TextInSty:{
-    padding:"6px 10px", 
+    padding:"7px 10px", 
     fontSize:"14px"
+  },
+  textarea:{    
+    border: "0px ",
+    boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
+    width: "97%",
+    margin: "0px 1px",
+    borderRadius: "3px",
+    outline: "none",
+    height: "48px",
+    padding: "5px"
+  },
+ commonBtns:{ 
+       display: "inline-flex",
+       flexDirection: "column",
+       height: "130px",
+       margin: "22px 0px 0px 0px ",
+       width: "80%",
+       alignContent: "space-around",
+       justifyContent: "space-between",
+ }
+}
+
+
+
+
+const sections={
+  justifyContent: "space-between",
+  margin:"40px 180px 0px 180px",
+  boxShadow: "0px 2px 25px -13px rgba(0,0,0,0.62)",
+  pl:3,
+  pr:3,
+  pt:3,
+  pb:3,
+  mt:5,
+  
+  '@media (min-width:480px)and (max-width:880px)' : {
+    margin:"40px 10px 0px 10px !important",
+  },
+  '@media (min-width:280px)and (max-width:470px)' : {
+    margin:"40px 10px 0px 10px !important",
+  }
+}
+
+const hidbtnTabeMode={
+  '@media (min-width:480px)and (max-width:880px)' : {
+    display:"none",
+  },
+  '@media (min-width:280px)and (max-width:470px)' : {
+    display:"none",
+  } 
+}
+
+
+const hidbtnWebMode={
+  '@media (min-width:880px)and (max-width:2470px)' : {
+    display:"none"
+  },
+  '@media (min-width:280px)and (max-width:470px)' : {
+    display:"none",
+  } 
+}
+
+const hidbuttonMobile={
+  '@media (min-width:880px)and (max-width:2470px)' : {
+    display:"none"
+  },
+  '@media (min-width:480px)and (max-width:880px)' : {
+    display:"none",
+  },
+} 
+
+
+const sections3={
+  margin:"40px 150px 0px 150px",
+  '@media (min-width:480px)and (max-width:880px)' : {
+    margin:"40px 10px 40px 10px !important",
+  },
+  '@media (min-width:280px)and (max-width:470px)' : {
+    margin:"40px 40px 40px 40px !important",
   }
 }

@@ -14,6 +14,7 @@ import NavBtnLeft from '../../components/buttons/navbtn/navBtnLeft'
 import NavBtnRight from '../../components/buttons/navbtn/navBtnRight'
 
 import AdvertisBox from '../../components/AdvertisBox'
+import HeadingsMain from '../../components/headings/heading'
 
 export default function BusinessSearch() {
   const TabledataBusinessSearch = ["S.no",
@@ -66,7 +67,8 @@ export default function BusinessSearch() {
                     d_color={"#5B9BD5"}
                     />
                     <div  style={mystyle.heading} >
-                        <h2 style={mystyle.htag}>Business Search</h2>
+                    <HeadingsMain h_vlaue={"Business Search"} h_urdu={" "} />
+                       
                     </div>
                   <Box sx={{ display:"flex", justifyContent:"center",width:"100%" ,flexWrap:"wrap",ml:15,mr:15}}>
                   
@@ -105,7 +107,8 @@ export default function BusinessSearch() {
    <Grid  item xs={12} sm={12}  md={12}  lg={12} sx={sections}>
    
                       <div  style={mystyle.heading} >
-                        <h2 style={mystyle.htag2}>Search Result</h2>
+                      <HeadingsMain h_vlaue={"Search Result"} h_urdu={" "} />
+                       
                       </div>
    <Box sx={{ display:"flex", justifyContent:"center",width:"100%",}}>
        <DataTableSearch data={TabledataBusinessSearch} tabledata={state} forRowData={rowDdata} />

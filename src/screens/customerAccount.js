@@ -10,6 +10,11 @@ import HomeButton from '../components/buttons/homeButton'
 import CommonBtn from '../components/buttons/Commonbtn';
 import profilePlaceholder from '../Assets/images/400X400placeholder.png'
 import { ImageUpload } from '../components/imgUpandShow/uploadimage';
+import NavBtnLeft from '../components/buttons/navbtn/navBtnLeft';
+import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
+import Mobilebtn from '../components/buttons/navbtn/mobilebtn';
+import HeadingsMain from '../components/headings/heading';
+import SubHeadings from '../components/headings/subheading';
 
 
 export default function CustomerAccount() {
@@ -17,125 +22,97 @@ export default function CustomerAccount() {
   
   return (
     <div>
-      <head>
-         <title>Customer Account</title>
-      </head>
     <Navbar />
     <Box sx={{
         height: 90,
       }}
     />
-<div style={{ textAlign:"center" }} >
-      <p style={{
-              fontSize:"30px",
-              fontWeight:"bold",
-              textAlign:"center",
-              margin:"0 auto" ,
-              marginBottom:"-36px",  
-              }}>
-       Customer Account
-      </p>
-</div>
+
 
 
     <Grid container xs direction="row" > 
  
-    <Grid item  xs={12} sm={12}  md={12} lg={2}  > <ButtonLeftlist/> </Grid>
+    <Grid item  xs={6} sm={0} md={2}  lg={2} sx={hidbtnTabeMode}> <ButtonLeftlist/> </Grid>
+    <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnLeft/>  </Grid>
+    <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
+    
+    <Grid container xs={12} sm={8} md={8}  lg={7.9} sx={{ mt:5, display: "flex", justifyContent: "center", }}  > 
 
-   <Grid item xs={12} sm={12} md={7.9}   sx={{ }} >
+    <div style={{ textAlign:"center",width:"100%" }} >
 
-    <Box 
-      sx={{
-      width:"100%",
-       display:"flex", 
-       justifyContent: "space-evenly", 
-       alignItems:" center", 
-       alignContent: "center",
-       flexDirection: "row",
-       flexWrap:"wrap"}}>
+    <HeadingsMain h_vlaue={"Customer Account"} h_urdu={""} />
 
-    <Grid item  xs={12}  sm={5} md={6} lg={5} 
+    </div>
+    <Grid item  xs={12}  sm={12} md={6} lg={5} 
     direction="column" 
-    sx={{display:"flex" , alignItems: "center", mt:3,pl:2,pr:2  
+    sx={{display:"flex" , alignItems: "center",  
     }}>
+      
      <Box  sx={{ 
            display: "flex",
            flexDirection: "column",
            justifyContent: "space-between",
-           height:"90%",
            margin: "5px 0px",
            width: "80%",
         }} >
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1  }} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" , }}}  
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" , }}}  
             placeholder="Full Name"              
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Land Line Number "      
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Mobile No"             
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Whatsapp No"            
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Email Address"
             type='email'         
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Facebook ID "           
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Instagram ID"          
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Country"               
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="Province / Estate "     
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="City "                 
          />
-        <TextField   
-            color="warning"  
+        <TextField color="warning"  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1}} 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             placeholder="UC/ VC/ Main Area "    
          />
-        <TextField  
-            color="warning"  
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}} 
+        <TextField color="warning"  
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}} 
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1,mb:2 }}
             placeholder="Nearest Famous Place "
          />
@@ -144,58 +121,38 @@ export default function CustomerAccount() {
                 minRows={3} 
                 input 
                 placeholder=" Street Address " 
-                style={{    
-                  border: "0px ",
-                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
-                  width: "95.5%",
-                  margin: "0px 1px",
-                  borderRadius: "3px",
-                  outline: "none",
-                  height: "48px",
-                  padding: "5px"
-                }} 
+                style={myStyle.textarea} 
              />
              <Box height={15} ></Box>
             <TextareaAutosize   
                 minRows={4}   
                 placeholder=" Google Maps Link  " 
-                style={{    
-                  border: "0px ",
-                  boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
-                  width: "95.5%",
-                  margin: "0px 1px",
-                  borderRadius: "3px",
-                  outline: "none",
-                  height: "48px",
-                  padding: "5px"
-                }}  
+                style={myStyle.textarea}  
              />
     </Box>
   </Grid>
 
-    <Grid item 
-         xs={12}  sm={6} md={6} lg={6} 
+    <Grid item xs={12}  sm={12} md={6} lg={6} 
          direction="column" 
-         sx={{display:"flex" , 
-              alignItems: "center", mt:5,pr:2 }}>
+         sx={{display:"flex" ,  alignItems: "center",  }}>
 
-      <div>
-         <h3>
-            Profile Pic
-         </h3>
-      </div>
+    <SubHeadings subheadingvlaue={"Profile Pic"} />
+            
+     
 
       <Box  sx={{ 
                 width:  "30vh",
                 height: "30vh",
                 margin: "0px 0px",   
                 // border: "2px solid gray",
-                boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)"           
+                boxShadow: " 0px 2px 25px -13px rgba(0,0,0,0.62)",
+                display:"flex",           
              }} >
 
-            <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={profilePlaceholder} />
-             
+             <ImageUpload Cheight={"100%"} CWidth={"100%"} imgLink={profilePlaceholder} />
+            
              </Box>
+             <p style={{fontSize:"10px",color: "#afaeae",margin:"5px auto"}} >click on image to upload profile, picture must be size 400x400  </p>
        
     <Box  sx={{ 
           display: "flex",
@@ -203,19 +160,19 @@ export default function CustomerAccount() {
           justifyContent: "space-between",
           height:"130px",
           width: "80%",
-          margin: "22px 0px",                
+          margin: "18px 0px",                
         }} >
 
         <TextField   
              color="warning"  
-             inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
+             inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}}  
              sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} placeholder="User ID" />
         <TextField 
             color="warning" 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}}  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} placeholder="Password" />
         <TextField   color="warning" 
-            inputProps={{style:{padding:"6px 10px", fontSize:"14px" }}}  
+            inputProps={{style:{padding:"7px 10px", fontSize:"14px" }}}  
             sx={{ mt:1, boxShadow: 3 ,borderRadius:1 }} 
             placeholder="Confirm Password" />
         
@@ -223,16 +180,7 @@ export default function CustomerAccount() {
 
         <MathValidation/>
 
-        <Box  sx={{ 
-                display: "inline-flex",
-                flexDirection: "column",
-                height: "130px",
-                margin: "22px 0px 0px 0px ",
-                width: "80%",
-                alignContent: "space-around",
-                justifyContent: "space-between",
-                
-             }} >
+        <Box  sx={myStyle.commonBtns} >
       <Button 
          variant="contained"  
          sx={{backgroundColor:"#70B243",
@@ -246,19 +194,13 @@ export default function CustomerAccount() {
       <Box  sx={{ mt:1 }} >
           <HomeButton/>
       </Box> 
-
-  </Grid>
-
-  </Box> 
-
+      <Box height={50} ></Box>
     </Grid>
    
-
-
-    <Grid  item xs={12} sm={12}  md={12} lg={2} 
-      >
-         <ButtonRightList/> 
     </Grid>
+   
+    <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
+    <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
 
     </Grid>
     
@@ -269,3 +211,83 @@ export default function CustomerAccount() {
 }
 
 
+const myStyle={
+   textarea:{    
+      border: "0px ",
+      boxShadow: "rgb(0 0 0 / 43%) 0px 1px 6px 1px",
+      width: "97%",
+      margin: "0px 1px",
+      borderRadius: "3px",
+      outline: "none",
+      height: "48px",
+      padding: "5px"
+    },
+   commonBtns:{ 
+         display: "inline-flex",
+         flexDirection: "column",
+         height: "130px",
+         margin: "22px 0px 0px 0px ",
+         width: "80%",
+         alignContent: "space-around",
+         justifyContent: "space-between",
+   }
+}
+
+
+const sections={
+   justifyContent: "space-between",
+   margin:"40px 180px 0px 180px",
+   boxShadow: "0px 2px 25px -13px rgba(0,0,0,0.62)",
+   pl:3,
+   pr:3,
+   pt:3,
+   pb:3,
+   mt:5,
+   
+   '@media (min-width:480px)and (max-width:880px)' : {
+     margin:"40px 10px 0px 10px !important",
+   },
+   '@media (min-width:280px)and (max-width:470px)' : {
+     margin:"40px 10px 0px 10px !important",
+   }
+ }
+ 
+ const hidbtnTabeMode={
+  '@media (min-width:480px)and (max-width:880px)' : {
+    display:"none",
+  },
+  '@media (min-width:280px)and (max-width:470px)' : {
+    display:"none",
+  } 
+}
+ 
+ 
+ const hidbtnWebMode={
+   '@media (min-width:880px)and (max-width:2470px)' : {
+     display:"none"
+   },
+   '@media (min-width:280px)and (max-width:470px)' : {
+     display:"none",
+   } 
+ }
+ 
+ const hidbuttonMobile={
+   '@media (min-width:880px)and (max-width:2470px)' : {
+     display:"none"
+   },
+   '@media (min-width:480px)and (max-width:880px)' : {
+     display:"none",
+   },
+ } 
+ 
+ 
+ const sections3={
+   margin:"40px 150px 0px 150px",
+   '@media (min-width:480px)and (max-width:880px)' : {
+     margin:"40px 10px 40px 10px !important",
+   },
+   '@media (min-width:280px)and (max-width:470px)' : {
+     margin:"40px 40px 40px 40px !important",
+   }
+ }
+ 

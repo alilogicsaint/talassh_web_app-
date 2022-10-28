@@ -7,6 +7,8 @@ import HomeButton from '../../components/buttons/homeButton'
 import Mobilebtn from '../../components/buttons/navbtn/mobilebtn'
 import NavBtnLeft from '../../components/buttons/navbtn/navBtnLeft'
 import NavBtnRight from '../../components/buttons/navbtn/navBtnRight'
+import HeadingsMain from '../../components/headings/heading'
+import SubHeadings from '../../components/headings/subheading'
 import MapGoogle from '../../components/map'
 import { Navbar } from '../../components/navBar'
 import AddItem_Expert_entry from './components/AddItem_Expert_entry'
@@ -52,25 +54,17 @@ export default function ExpertEntry() {
 
     <Box sx={{ml:1, mr:1, boxShadow: "0px 2px 25px -13px rgba(0,0,0,0.62)", display:"flex", flexWrap:'wrap' ,p:1, alignContent: "flex-start" }}>
       
-            <p style={{
-                 fontSize:"30px",
-                 fontWeight:"bold",
-                 textAlign:"center",
-                 padding:"10px",
-                 width:"100%",
-                 height:"50px",
-                 margin:"0 auto"
-             }}>
-             Expert (کاریگر)
-            </p>
+    <HeadingsMain h_vlaue={"Expert "} h_urdu={" (کاریگر) "} />
+        
+           
 
 
-         <Grid item xs={12} sm={12} md={4}  lg={7} >
+         <Grid item xs={12} sm={12} md={7}  lg={7} >
           <Box sx={{p:1 }} >
                 <Box sx={{ display:"flex", justifyContent:"center",width:"100%" ,flexWrap: "wrap", }}>
                 <img style={mystyle.img} src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png" />                   
                 <div  style={mystyle.heading} >
-                    <h2 style={mystyle.htag}>Mani Fani Food Point</h2>
+                <SubHeadings subheadingvlaue={"Mani Fani Food Point"} />
                 </div>
                 </Box>
              <Grid  item container direction="row"  sx={{p:1,mt:1 }}>
@@ -94,7 +88,7 @@ export default function ExpertEntry() {
         </Grid>
         
 
-        <Grid item xs={12} sm={12}  md={4}  lg={5} >
+        <Grid item xs={12} sm={12}  md={5}  lg={5} >
              
       <Box sx={{
               alignItems: "center",
@@ -123,7 +117,8 @@ export default function ExpertEntry() {
     <Grid item xs={12} sm={12}  md={12}  lg={12} sx={sections} >
               <div style={mystyle.heading}>
                 <h1 style={mystyle.htag} >
-                    Add New Item
+                <HeadingsMain h_vlaue={"Add New Item"} h_urdu={" "} />
+                    
                 </h1>
               </div>
              <Box >
@@ -133,7 +128,8 @@ export default function ExpertEntry() {
         <Grid item xs={12} sm={12}  md={12}  lg={12} sx={sections}>
         <div style={mystyle.heading}>
                 <h1 style={mystyle.htag} >
-                   Existing Items Data
+                <HeadingsMain h_vlaue={"  Existing Items Data"} h_urdu={" "} />
+                 
                   
                 </h1>
               </div>
@@ -152,7 +148,7 @@ export default function ExpertEntry() {
           <CommonBtn color={"#EDBD2B"} link={"/"} textvalue={"Add New Item"} widthval={"200px"} /> 
           <Box sx={{width:"5px"}}></Box>
          </Box> 
-        </Grid>
+    </Grid>
        
     
           
@@ -237,8 +233,9 @@ const sections3={
     margin:"40px 10px 40px 10px !important",
   },
   '@media (min-width:280px)and (max-width:470px)' : {
-    margin:"40px 10px 40px 10px !important",
+    margin:"40px 40px 40px 40px !important",
   }
 }
+
 
 

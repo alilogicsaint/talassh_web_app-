@@ -35,7 +35,7 @@ export default function CommonNavBtn(props) {
             '&:hover': { backgroundColor: urlElements == btnval ? "black": DynColor, 
             opacity: [0.9, 0.8, 0.7],},
             flexDirection:  `${FlexD}`,
-            padding:" 24px 5px",
+            padding:" 20px 3px",
             }}>
       {btnText}
     </Button> 
@@ -49,5 +49,6 @@ const btnsleft={
       boxShadow: "2px 2px 30px -13px rgba(0,0,0,1)",
       m: 1 ,
       justifyContent:"space-between"   , 
+      fontSize:"12px"
     }
   }
