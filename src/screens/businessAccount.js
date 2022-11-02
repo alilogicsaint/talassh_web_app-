@@ -17,7 +17,7 @@ import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
 import HeadingsMain from '../components/headings/heading';
 import SubHeadings from '../components/headings/subheading';
 
-export default function BusinessAccount() {
+export default function BusinessAccount(props) {
   
    const [Fullname, setFullname] = useState('')
    const [LineNumber, setLinemumber] = useState()

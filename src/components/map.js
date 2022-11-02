@@ -24,7 +24,7 @@ const mapStyle={
     boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
     '@media (min-width:480px)and (max-width:880px)' : {
        margin:"40px 0px 0px 0px !important",
-       height:"350px",
+       height:"270px",
       },
       '@media (min-width:280px)and (max-width:470px)' : {
         margin: "30px 0px 19px 0px!important",

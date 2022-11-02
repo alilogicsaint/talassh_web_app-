@@ -11,6 +11,7 @@ import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
 
 export default function Home(props) {
 
+  console.log("homeProps:",props)
   return (
   <div >
     
@@ -23,16 +24,20 @@ export default function Home(props) {
     <Grid item container xs={12} sm={12}  md={12} lg={12} direction="row" > 
    
     {/* button list 1 */}
+
     <Grid item  xs={6} sm={0} md={2}  lg={2} sx={hidbtnTabeMode}> <ButtonLeftlist/> </Grid>
     <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnLeft/>  </Grid>
     <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
 
     {/* button list center 2 */}
+
     <Grid item container xs={12} sm={8} md={8}  lg={7.9} sx={{ mt:5, display: "flex", justifyContent: "center", }}  >
           <CenterButton/>
-      </Grid>
+    </Grid>
 
-     <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
+    {/* button list center 3 */}
+
+    <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
     <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
 
     </Grid>

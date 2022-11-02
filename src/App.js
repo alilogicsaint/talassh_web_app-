@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link, useNavigation } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, BrowserRouter, Navigate, } from "react-router-dom";
 import AgentAccount from "./screens/AgentAccount";
 import BusinessAccount from "./screens/businessAccount";
 import BusinessEntery from "./screens/business/BusinessEntery";
@@ -8,22 +8,42 @@ import Home from "./screens/home";
 import Register from "./screens/Register";
 import  store  from './store/index';
 import { Provider } from 'react-redux';
-import BusinessSearch from "./screens/business/BusinessSearch";
 import ExpertSearch from "./screens/Expert/expertSearch";
 import ExpertEntry from "./screens/Expert/expertEntery";
 import HelperEntry from "./screens/laberHelper/HelperEntery";
 import HelperSearch from "./screens/laberHelper/HelperSearch";
 import Login from "./screens/login";
-import MySlider from "./components/slider/slider";
+import BusinessSearch from './screens/business/businessSearch'
 import './App.css'
 
+
 export default function BasicExample() {
+
+
+   const [isAuthenticated, setIsAuthenticated] = useState(false) 
+   const [token, settoken] = useState() 
+  
+  function authenticate(token) {
+    setIsAuthenticated(true)
+    settoken(token)
+} 
+
+  function logout(){
+    setIsAuthenticated(false)
+    settoken("")
+  }
+
+
+ function RequireAuth({ children ,isAuthenticated, token,redirectTo,  ...rest  }) {
+ return children.props.isAuthenticated ? children :  <Navigate to={redirectTo} />
+}
+
  
   return (
     <Provider store={store}>
+    
     <Routes>
-      <Route path="/" element={<Home/>} />
-     
+      {/* <Route path="/" element={<Home/>} /> */}
       <Route path="business_Account" element={<BusinessAccount/>} />
       <Route path="register" element={<Register/>} />
       <Route path="Customer_Account" element={<CustomerAccount/>} />
@@ -35,11 +55,100 @@ export default function BasicExample() {
       <Route path="Expert_Search" element={<ExpertSearch/>} />
       <Route path="Helper_Entry" element={<HelperEntry/>} />
       <Route path="Helper_Search" element={<HelperSearch/>} />
-      <Route path="login" element={<Login/>} />
-      <Route path="Slider" element={<MySlider/>} />
+      <Route path="Login" element={ <Login authenticate={(e)=>authenticate(e)} isAuthenticated={isAuthenticated} logout={()=>logout()} />} />
+      
+      <Route
+          path="/"
+          element={
+            <RequireAuth redirectTo="/login">
+             <Home isAuthenticated={isAuthenticated} token={token} />
+            </RequireAuth>
+           
+          }
+        />
+        {/* <Route path="/"  element={<PrivateOutlet />}>
+           <Route path="" element={ <Home isAuthenticated={isAuthenticated} token={token} />} />
+        </Route> */}
    
     </Routes>
-
+    
   </Provider>
   );
 };
+
+
+
+
+
+
+
+
+// function PrivateRoute({ children ,isAuthenticated, token, ...rest }) {
+//    console.log(props)
+//   return isAuthenticated ? 
+//   children
+//   : 
+//   <Navigate to="/Login" />;
+// }
+
+// const PrivateRoute = ({ component:Component, isAuthenticated, token, ...rest }) => (
+//   <Route {...rest} render={props => (
+//       isAuthenticated ? (
+//           <Component {...props} {...rest} token={token} isAuthenticated={isAuthenticated} />
+//       ) : (
+//          <Navigate to="/Login" />
+//       )
+//   )} />
+// );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const Menu = (props) => (
+//   <ul>
+//       <li>
+//           <NavLink exact activeClassName="active" to="/">
+//               Home
+//           </NavLink>
+//       </li>
+//       <li>
+//           <NavLink exact activeClassName="active" to="/login">
+//               Login
+//           </NavLink>
+//       </li>
+//       <li>
+//           <NavLink exact activeClassName="active" to="/clients">
+//               Clients
+//           </NavLink>
+//       </li>
+//   </ul>
+// );
