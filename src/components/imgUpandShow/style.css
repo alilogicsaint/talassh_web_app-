@@ -9,3 +9,12 @@
     background-repeat: no-repeat;
     background-size: contain;
 } */
+
+button.buttonClear_images {
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    top: 10%;
+    right: 10%;
+    
+}

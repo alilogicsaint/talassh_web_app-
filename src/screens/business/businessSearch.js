@@ -16,7 +16,11 @@ import NavBtnRight from '../../components/buttons/navbtn/navBtnRight'
 import AdvertisBox from '../../components/AdvertisBox'
 import HeadingsMain from '../../components/headings/heading'
 
-export default function BusinessSearch() {
+export default function BusinessSearch(props) {
+
+
+  console.log("this is Business props====>", props)
+
   const TabledataBusinessSearch = ["S.no",
     "Shop Name",
     "Main Category",

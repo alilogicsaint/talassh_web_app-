@@ -17,129 +17,119 @@ import SubHeadings from '../components/headings/subheading';
 
 
 
-
-
-
 export default function Login(props) {
- 
-
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
-  const [user, setUser] = useState()
   
-     function handleChange(e){
-
-      const name = e.target.name;
-      setUser({
-         [name]: e.target.value
-      })
-      
-    }
-//  console.log("this is user =>",user)
-const navigate = useNavigate();
-
-    
-  
+  const navigate = useNavigate();
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+   
+   var user ;
    function logout(){
     props.logout()
    }
 
-   function handleSubmit(e) {
-       props.authenticate("030000030001")
-       navigate("/");
-      e.preventDefault();
-      axios.post('/api/signin', {
+  function handleSubmit(e) {
+    user ={  
+       name:name,
+       email:email,
+       password:password
+     }
+     props.authenticate("token")
+          navigate("/");
+     e.preventDefault();
+     axios.post('https://demo.swifttech3.com/talash/laravel-jwt-auth/public/api/login', {
+          name:user.name,
           email: user.email,
           password: user.password,
       })
       .then((response) => {
           const token = response.data.token;
-       
-          console.log("token =======>",token);
+          
       })
       .catch((error) => {
           console.log(error);
       });
-    }
- 
-    return (
-        <>
-        <Navbar />
-        <Box sx={{
-              height: 90,
-            }}
-          />
-      
-        <Grid item container xs={12} sm={12}  md={12} lg={12} direction="row" > 
-         
-          {/* button list 1 */}
-          <Grid item  xs={6} sm={0} md={2}  lg={2} sx={hidbtnTabeMode}> <ButtonLeftlist/> </Grid>
-          <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnLeft/>  </Grid>
-          <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
-          {/* button list center 2 */}
-        <Grid item xs={12} sm={8}  md={8} lg={8} spacing={2} sx={{}} >
-   <div className=''>
-   {props.isAuthenticated ?
-    <div className='logoutContainer'>
-      <div style={{ textAlign:"center",width:"100%" }} >
-      <HeadingsMain h_vlaue={" Login "} h_urdu={" "} />
-     </div>
-      <p>You are already logged in.</p>
-      <button class="logoutBtn" onClick={()=>logout()}  >
-        logout
-      </button>
-    </div>
-    
-    :<div class="LoginFormContainer" >
-       
-    <form onSubmit={(e)=>handleSubmit(e)}>
-      <div className='loginicon_Container' >
-      <img src={UserIcon} alt=""/>
+  }
+  
+ return (
+    <>
+    <Navbar />
+    <Box sx={{ height: 90, }} />
+    {/* button list 1 */}
+  <Grid item container xs={12} sm={12}  md={12} lg={12} direction="row" >
+
+    <Grid item  xs={6} sm={0} md={2}  lg={2} sx={hidbtnTabeMode}> <ButtonLeftlist/> </Grid>
+    <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnLeft/>  </Grid>
+    <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
+
+     {/* button list center 2 */}
+
+    <Grid item xs={12} sm={8}  md={8} lg={8} spacing={2} sx={{}} >
+       <div className=''>
+      {props.isAuthenticated 
+       ?
+       <div className='logoutContainer'>
+          <div style={{ textAlign:"center",width:"100%" }} >
+           <HeadingsMain h_vlaue={" Login "} h_urdu={" "} />
+          </div>
+          <p>You are already logged in.</p>
+          <button class="logoutBtn" onClick={()=>logout()}  >
+            logout
+          </button>
       </div> 
-      <SubHeadings subheadingvlaue={"Login"} />
-      
-      <div className='form-group'>
-         <p>User ID</p>
-         <input
-            name='email'
-            type='email'
-            className='form-control'
-            placeholder='email'
-            // value={}
-            onChange={(e)=>handleChange(e)} />
-      </div>
-      <div className='form-group'>
-         <p>Password</p>
-         <input
-            name='password'
-            type='password'
-            className='form-control'
-            placeholder='Password'
-            // value={}
-            onChange={(e)=>handleChange(e)} />
-      </div>
-      <div className='form-group'>
-         <div> &nbsp;</div>
-        <input type='submit' className='btn' value='Login' />
-        
-      </div>
-    </form>
-    </div>}
-   
-  </div>         
+      :
+      <div class="LoginFormContainer" >   
+          <form onSubmit={(e)=>handleSubmit(e)}>
+         
+            <div className='loginicon_Container' >
+             <img src={UserIcon} alt=""/>
+            </div> 
+         
+            <SubHeadings subheadingvlaue={"Login"} />         
+            <div className='form-group'>
+              <p>Name</p>
+              <input
+              className='form-control'
+              placeholder='name'
+              // value={}
+              onChangeCapture={(e)=>setName(e.target.value)} />
+            </div>
 
-          
-
-            </Grid>
+            <div className='form-group'>
+              <p>Email</p>
+              <input
+              name='email'
+              type='email'
+              className='form-control'
+              placeholder='email'
+              onChangeCapture={(e)=>setEmail(e.target.value)} />
+            </div>
+        
+            <div className='form-group'>
+               <p>Password</p>
+                <input
+                type='password'
+                className='form-control'
+                placeholder='Password'
+                onChangeCapture={(e)=>setPassword(e.target.value)} />
+            </div>
+         
+            <div className='form-group'>
+                <div> &nbsp;</div>
+                <input type='submit' className='btn' value='Login' /> 
+            </div>
+       
+         </form>
+      </div>
+       } 
+     </div>         
+    </Grid>
       
-            <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
-            <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
-      
-        </Grid>
-        
-        
-        
-          <Footer/>
+    <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>
+    <Grid item  xs={6} sm={2} md={2}  lg={2} sx={hidbtnWebMode}> <NavBtnRight/>  </Grid>
+    </Grid>
+    <Footer/>
 
      </>
       

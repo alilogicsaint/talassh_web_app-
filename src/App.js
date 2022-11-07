@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter, Navigate, } from "react-router-dom";
 import AgentAccount from "./screens/AgentAccount";
 import BusinessAccount from "./screens/businessAccount";
@@ -19,21 +19,21 @@ import './App.css'
 
 export default function BasicExample() {
 
-
    const [isAuthenticated, setIsAuthenticated] = useState(false) 
    const [token, settoken] = useState() 
-  
-  function authenticate(token) {
+   
+
+
+function authenticate(token) {
     setIsAuthenticated(true)
     settoken(token)
 } 
 
-  function logout(){
+function logout(){
     setIsAuthenticated(false)
     settoken("")
-  }
-
-
+}
+ 
  function RequireAuth({ children ,isAuthenticated, token,redirectTo,  ...rest  }) {
  return children.props.isAuthenticated ? children :  <Navigate to={redirectTo} />
 }
@@ -53,7 +53,7 @@ export default function BasicExample() {
       <Route path="Business_Search" element={<BusinessSearch/>} />
       <Route path="Expert_Entery" element={<ExpertEntry/>} />
       <Route path="Expert_Search" element={<ExpertSearch/>} />
-      <Route path="Helper_Entry" element={<HelperEntry/>} />
+      <Route path="Helper_Entry"  element={<HelperEntry/>} />
       <Route path="Helper_Search" element={<HelperSearch/>} />
       <Route path="Login" element={ <Login authenticate={(e)=>authenticate(e)} isAuthenticated={isAuthenticated} logout={()=>logout()} />} />
       
@@ -66,9 +66,7 @@ export default function BasicExample() {
            
           }
         />
-        {/* <Route path="/"  element={<PrivateOutlet />}>
-           <Route path="" element={ <Home isAuthenticated={isAuthenticated} token={token} />} />
-        </Route> */}
+      
    
     </Routes>
     
@@ -78,77 +76,3 @@ export default function BasicExample() {
 
 
 
-
-
-
-
-
-// function PrivateRoute({ children ,isAuthenticated, token, ...rest }) {
-//    console.log(props)
-//   return isAuthenticated ? 
-//   children
-//   : 
-//   <Navigate to="/Login" />;
-// }
-
-// const PrivateRoute = ({ component:Component, isAuthenticated, token, ...rest }) => (
-//   <Route {...rest} render={props => (
-//       isAuthenticated ? (
-//           <Component {...props} {...rest} token={token} isAuthenticated={isAuthenticated} />
-//       ) : (
-//          <Navigate to="/Login" />
-//       )
-//   )} />
-// );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const Menu = (props) => (
-//   <ul>
-//       <li>
-//           <NavLink exact activeClassName="active" to="/">
-//               Home
-//           </NavLink>
-//       </li>
-//       <li>
-//           <NavLink exact activeClassName="active" to="/login">
-//               Login
-//           </NavLink>
-//       </li>
-//       <li>
-//           <NavLink exact activeClassName="active" to="/clients">
-//               Clients
-//           </NavLink>
-//       </li>
-//   </ul>
-// );

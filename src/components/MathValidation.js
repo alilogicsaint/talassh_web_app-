@@ -34,7 +34,7 @@ export default function MathValidation() {
    {check? 
    <CheckCircleOutlineRoundedIcon sx={{
         width:51,
-        height:51,
+        height:76.8,
         color: "green"
         
    }} />: <Box sx={{
@@ -69,7 +69,7 @@ export default function MathValidation() {
       
       <TextField  
       inputProps={{
-        maxlength: 1,
+        maxlength: 2,
         style:{padding:"9px 9px", fontSize:"23px" ,width:43,height:43,borderRadius:"10px" } 
       }}
       sx={{ borderRadius:2 }}

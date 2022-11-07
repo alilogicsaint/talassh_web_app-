@@ -1,6 +1,11 @@
 import axios from "axios"
 
-
+ const loginToken=(token)=>{
+    return async (dispatch) => { 
+      dispatch({type:"Login", user:token})
+      console.log("action===>",token)
+   };
+ }
 
  const getdata=()=>{
     return async (dispatch) => {       
@@ -27,6 +32,7 @@ import axios from "axios"
 export {
     getdata,
     getTabledata,
+    loginToken,
 }
 
 

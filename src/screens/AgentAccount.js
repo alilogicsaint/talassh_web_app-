@@ -16,25 +16,40 @@ import Mobilebtn from '../components/buttons/navbtn/mobilebtn';
 import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
 import HeadingsMain from '../components/headings/heading';
 import SubHeadings from '../components/headings/subheading';
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
 export default function AgentAccount() {
-   
-   const [Fullname, setFullname] = useState('')
-   const [LineNumber, setLinemumber] = useState()
-   const [MobileNo, setMobileNo] = useState()
-   const [WhatsappNo, setWhatsappNo] = useState()
-  
-   var data =[
-      Fullname,
-      LineNumber,
-      MobileNo,
-      WhatsappNo,
-    ]
-   function collectdata(){
-    let send = data
-    console.log(send)
-   }
+   const navigate = useNavigate(); 
+   const [name, setName] = useState()
+   const [email, setEmail] = useState()
+   const [password, setPassword] = useState()
+   var user ;
+
+    function handleSubmit(e) {
+      user ={  
+        name:name,
+        email:email,
+        password:password
+      }
+      e.preventDefault();
+      axios.post('https://demo.swifttech3.com/talash/laravel-jwt-auth/public/api/register', {
+        name:user.name,
+        email:user.email,
+        password:user.password,
+      })
+      .then((response) => {
+        //  const token = response.data.token;
+         console.log("___registerd")
+         navigate('/Business_Search');
+
+      })
+      .catch((error) => {
+         console.log(error);
+      });
+   }  
+
    
 
 return (
@@ -83,73 +98,80 @@ return (
              </Box>
 
             <TextField 
-                onChange={(e)=>{setFullname(e.target.value)}}
+                placeholder="name" 
+                name='name'
+                onChange={(e)=>{setName(e.target.value)}}
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }}  
-                placeholder="Full Name"                          
+                                         
                  />
-            <TextField   
-                onChange={(e)=>{setLinemumber(e.target.value)}}
+            <TextField 
+                placeholder="email"  
+                name='email'
+                type={'email'} 
+                onChange={(e)=>{setEmail(e.target.value)}}
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
-                placeholder="Land Line Number "      
+                   
              />
-            <TextField  
-                onChange={(e)=>{setMobileNo(e.target.value)}} 
+            <TextField 
+                name='password'
+                type={'password'} 
+                onChange={(e)=>{setPassword(e.target.value)}} 
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
-                placeholder="Mobile No"                  
+                placeholder="Password"                  
              />
             <TextField  
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}  
+                onChange={(e)=>{}}  
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Whatsapp No"                 
              />
             <TextField
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}    
+                onChange={(e)=>{}}    
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Email Address"              
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Facebook ID "                 
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Instagram ID"                
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Country"                    
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Province / Estate "     
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="City "                           
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}   
+                onChange={(e)=>{}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="UC/ VC/ Main Area "    
              />
             <TextField 
-                onChange={(e)=>{setWhatsappNo(e.target.value)}}  
+                onChange={(e)=>{}}  
                 color="warning" sx={myStyle.TextFieldsx}
                 inputProps={{style:myStyle.TextInSty }}  
                 placeholder="Nearest Famous Place "
@@ -251,7 +273,7 @@ return (
              }} >
         <Button 
            variant="contained"  
-            onClick={collectdata()}
+            onClick={(e)=>handleSubmit(e)}
             sx={{backgroundColor:"#70B243",
             '&:hover': { backgroundColor: '#70B243', opacity: [0.9, 0.8, 0.7],},
              }}> Submit

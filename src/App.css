@@ -89,6 +89,7 @@ input.form-control:focus {
 }
 .form-group p {
   font-weight: 500;
+  width: 35%;
 }
 
 input.btn {
@@ -131,7 +132,7 @@ input.btn:hover {
 
 
 
-@media (min-width : 800px ) {
+@media (max-width : 800px ) {
    
   .heading{
     font-size: 20px;
@@ -152,6 +153,9 @@ input.btn:hover {
   .m0{margin: 0px auto;}
   .my10{margin: 10px auto;}
   .mx10{margin:auto 10px; }
+
+  .LoginFormContainer form {
+    width: 60%;}
 }
 
 
@@ -184,7 +188,11 @@ input.btn:hover {
     margin: 0px;
   }
   .LoginFormContainer form {
-    width: 74%;
-    
+    width: 86%;
+    padding: 15px;
+}
+.logoutContainer {
+  width: 76%;
+  padding: 10px;
 }
 } 
