@@ -1,8 +1,10 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 
 export default function CommonRowBtn(props) {
+    const state = useSelector(state =>state) 
     const FlexD = props.FlexD
     const DynColor  = props.dyn_Color 
     const DynWidth  = props.dyn_Width
@@ -14,8 +16,10 @@ export default function CommonRowBtn(props) {
     const urlElements = window.location.pathname
     const navigate = useNavigate();
     
+      console.log("in button screen ++>",state.login.success)
+
     function  handleClick () { 
-      navigate(btnval);
+      navigate(state.login.success?btnval:"/");
     } 
     
   return ( 

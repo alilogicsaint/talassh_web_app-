@@ -7,10 +7,14 @@ import Footer from "../components/footer";
 import NavBtnLeft from '../components/buttons/navbtn/navBtnLeft';
 import Mobilebtn from '../components/buttons/navbtn/mobilebtn';
 import NavBtnRight from '../components/buttons/navbtn/navBtnRight';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 export default function Home(props) {
-
+  // const state = useSelector(state =>state)
+  // const [users, setusers] = useState()
+  // const logindata= state.login 
   console.log("homeProps:",props)
   return (
   <div >
@@ -42,7 +46,18 @@ export default function Home(props) {
 
     </Grid>
   
-  
+    <div>
+    <h1>Clients</h1>
+            {/* { users.map((users, index) => {
+                return (
+                    <div className="client" key={index}>
+                        {users.name}<br />
+                        {users.email}<br />
+                        <hr />
+                    </div>
+                )
+            })} */}
+    </div>
   
     <Footer/>
     </div>

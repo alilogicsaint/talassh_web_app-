@@ -19,6 +19,8 @@ import SubHeadings from '../components/headings/subheading';
 
 export default function BusinessAccount(props) {
   
+  
+  
    const [Fullname, setFullname] = useState('')
    const [LineNumber, setLinemumber] = useState()
    const [MobileNo, setMobileNo] = useState()
@@ -203,11 +205,8 @@ export default function BusinessAccount(props) {
          placeholder="Enter Admin Code" />
 
      </Box>
-     <SubHeadings subheadingvlaue={"Business Pic Slide Show"} />
+    <SubHeadings subheadingvlaue={"Business Pic Slide Show"} />
         
-    
-
-  
     <Box  sx={{ 
           width:"80%",
           height:"170px",

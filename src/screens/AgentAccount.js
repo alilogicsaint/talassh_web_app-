@@ -1,4 +1,4 @@
-import { Button, Grid,TextareaAutosize, TextField, } from '@mui/material'
+import { Button, Grid,IconButton,InputAdornment,TextareaAutosize, TextField, } from '@mui/material'
 import React, { useState } from 'react'
 import ButtonLeftlist from '../components/buttons/buttonLeftlist'
 import ButtonRightList from '../components/buttons/buttonRightList'
@@ -18,40 +18,83 @@ import HeadingsMain from '../components/headings/heading';
 import SubHeadings from '../components/headings/subheading';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { RegisterAgent } from '../store/action';
+import { SiAmericanexpress } from 'react-icons/si';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import SuccessReg from '../components/successReg';
 
 
-export default function AgentAccount() {
-   const navigate = useNavigate(); 
-   const [name, setName] = useState()
-   const [email, setEmail] = useState()
-   const [password, setPassword] = useState()
-   var user ;
+export default function AgentAccount(props) {
+  const state = useSelector(state =>state)
+  const dispatch = useDispatch()
+  const navigate = useNavigate(); 
+  // const [landLine, setLandLine] = useState()
+  // const [mobNum, setMobNum] = useState()
+  // const [whatsappNo, setWhatsappNo] = useState()
+  // const [fbID, setFbID] = useState()
+  // const [instaID, setinstaID] = useState()
+  // const [countryl, setCountry] = useState()
+  // const [estate, setEstate] = useState()
+  // const [city, setCity] = useState()
+  // const [areaUC, setAreaUC] = useState()
+  // const [NearestPlace, setNearestPlace] = useState()
+  // const [address, setAddress] = useState()
+  // const [maplink, setMaplink] = useState()
+  // const [cnic, setCnic] = useState()
+  // const [cnicCnicIssueDate, setCnicIssueDate] = useState()
+  // const [cnicExpiDate, setCnicExpiDate] = useState()
+  // const [cnicAdminCode, setCnicAdminCode] = useState()
+  // const [userID, setUserID] = useState()
+  const [name, setName] = useState()
+  const [email, setEmail] = useState() 
+  // const [pass, setPass] = useState();
+  const [confirmPass, setconfirmPass] = useState();
+  var user ;
+  // var password;
+  // if(pass == confirmPass){
+  //   password = confirmPass
+  // }
+  // else{
+    
+  // }
 
-    function handleSubmit(e) {
+
+console.log("register===>>>>",state.register.success)
+
+  function handleSubmit(e) {
+       e.preventDefault();
       user ={  
         name:name,
-        email:email,
-        password:password
+        email:email, 
+        password:confirmPass,
+        // landLine:landLine,
+        // mobNum:mobNum,
+        // whatsappNo:whatsappNo,
+        // fbID:fbID,
+        // instaID:instaID,
+        // countryl:countryl,
+        // estate:estate,
+        // city:city,
+        // NearestPlace:NearestPlace,
+        // address:address,
+        // areaUC:areaUC,
+        // NearestPlace:NearestPlace,
+        // maplink:maplink,
+        // cnic:cnic,
+        // cnicCnicIssueDate:cnicCnicIssueDate,
+        // cnicExpiDate:cnicExpiDate,
+        // cnicAdminCode:cnicAdminCode,
+        // userID:userID,
       }
-      e.preventDefault();
-      axios.post('https://demo.swifttech3.com/talash/laravel-jwt-auth/public/api/register', {
-        name:user.name,
-        email:user.email,
-        password:user.password,
-      })
-      .then((response) => {
-        //  const token = response.data.token;
-         console.log("___registerd")
-         navigate('/Business_Search');
+      console.log("agent",user)
+      dispatch(RegisterAgent(user)) 
+     
+}  
 
-      })
-      .catch((error) => {
-         console.log(error);
-      });
-   }  
-
-   
-
+const [showPassword, setShowPassword] = useState(false);
+const handleClickShowPassword = () => setShowPassword(!showPassword);
+const handleMouseDownPassword = () => setShowPassword(!showPassword);
 return (
   <div>
     <Navbar/>
@@ -69,6 +112,13 @@ return (
   <Grid item  xs={12} sm={12} md={2}  lg={2} sx={hidbuttonMobile}> <Mobilebtn/>  </Grid>
     
    
+ 
+  {  state.register.success 
+       ?
+       <Grid container xs={12} sm={8} md={8}  lg={7.9} sx={{ mt:5, display: "flex", justifyContent: "center", }}  >
+        <SuccessReg/>
+        </Grid>
+        :
   <Grid container xs={12} sm={8} md={8}  lg={7.9} sx={{ mt:5, display: "flex", justifyContent: "center", }}  > 
 
      <div style={{ textAlign:"center",width:"100%" }} >
@@ -98,80 +148,88 @@ return (
              </Box>
 
             <TextField 
+                required
                 placeholder="name" 
-                name='name'
                 onChange={(e)=>{setName(e.target.value)}}
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }}  
                                          
                  />
             <TextField 
-                placeholder="email"  
-                name='email'
-                type={'email'} 
-                onChange={(e)=>{setEmail(e.target.value)}}
+                required
+                placeholder="Land Line Number"  
+                // onChange={(e)=>{setLandLine(e.target.value)}}
                 color="warning" sx={myStyle.TextFieldsx} 
-                inputProps={{style:myStyle.TextInSty }} 
-                   
+                inputProps={{style:myStyle.TextInSty }}  
              />
             <TextField 
-                name='password'
-                type={'password'} 
-                onChange={(e)=>{setPassword(e.target.value)}} 
+                required
+                type={'number'} 
+                // onChange={(e)=>{setMobNum(e.target.value)}} 
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
-                placeholder="Password"                  
+                placeholder="mobile Number"                  
              />
-            <TextField  
-                onChange={(e)=>{}}  
+            <TextField 
+                required 
+                // onChange={(e)=>{setWhatsappNo(e.target.value)}}  
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Whatsapp No"                 
              />
             <TextField
-                onChange={(e)=>{}}    
+                required
+                type={"email"}
+                onChange={(e)=>{setEmail(e.target.value)}}    
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Email Address"              
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setFbID(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Facebook ID "                 
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setinstaID(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Instagram ID"                
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setCountry(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Country"                    
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setEstate(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="Province / Estate "     
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setCity(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="City "                           
              />
             <TextField 
-                onChange={(e)=>{}}   
+                required
+                // onChange={(e)=>{setAreaUC(e.target.value)}}   
                 color="warning" sx={myStyle.TextFieldsx} 
                 inputProps={{style:myStyle.TextInSty }} 
                 placeholder="UC/ VC/ Main Area "    
              />
             <TextField 
-                onChange={(e)=>{}}  
+                required
+                // onChange={(e)=>{setNearestPlace(e.target.value)}}  
                 color="warning" sx={myStyle.TextFieldsx}
                 inputProps={{style:myStyle.TextInSty }}  
                 placeholder="Nearest Famous Place "
@@ -182,12 +240,14 @@ return (
                 input 
                 placeholder=" Street Address " 
                 style={myStyle.textarea} 
+                // onChange={(e)=>{setAddress(e.target.value)}}  
              />
              <Box height={15} ></Box>
             <TextareaAutosize   
                 minRows={4}   
                 placeholder=" Google Maps Link  " 
                 style={myStyle.textarea}  
+                // onChange={(e)=>{setMaplink(e.target.value)}}  
              />
          </Box>
   </Grid>
@@ -205,24 +265,32 @@ return (
                 margin: "10px 0px 22px 0px",
              }} >
 
-    <TextField   
-         color="warning"  
-         inputProps={{style:myStyle.TextInSty }}  
-         sx={myStyle.TextFieldsx } placeholder="CNIC" />
-    <TextField   
-         color="warning" 
-         inputProps={{style:myStyle.TextInSty }}  
-         sx={myStyle.TextFieldsx } 
-         placeholder="CNIC Issue Date" />
-    <TextField   color="warning" 
-         inputProps={{style:myStyle.TextInSty }}
-          sx={myStyle.TextFieldsx} 
-         placeholder="CNIC Expiry Code" />
-    <TextField  
-         color="warning" 
-         inputProps={{style:myStyle.TextInSty }}
-          sx={myStyle.TextFieldsx}
-         placeholder="Enter Admin Code" />
+    <TextField 
+        required  
+        // onChange={(e)=>{setCnic(e.target.value)}}
+        color="warning"  
+        inputProps={{style:myStyle.TextInSty }}  
+        sx={myStyle.TextFieldsx } placeholder="CNIC" />
+    <TextField 
+        required
+        // onChange={(e)=>{setCnicIssueDate(e.target.value)}}  
+        color="warning" 
+        inputProps={{style:myStyle.TextInSty }}  
+        sx={myStyle.TextFieldsx } 
+        placeholder="CNIC Issue Date" />
+    <TextField
+        // onChange={(e)=>{setCnicExpiDate(e.target.value)}}
+        color="warning" 
+        inputProps={{style:myStyle.TextInSty }}
+        sx={myStyle.TextFieldsx} 
+        placeholder="CNIC Expiry Code" />
+    <TextField 
+        required 
+        // onChange={(e)=>{setCnicAdminCode(e.target.value)}}
+        color="warning" 
+        inputProps={{style:myStyle.TextInSty }}
+        sx={myStyle.TextFieldsx}
+        placeholder="Enter Admin Code" />
 
      </Box>
 
@@ -245,16 +313,39 @@ return (
           margin:"10px 0px",                
         }} >
 
-        <TextField   
-             color="warning"  
-             inputProps={{style:myStyle.TextInSty }}  
-             sx={myStyle.TextFieldsx } placeholder="User ID" />
         <TextField 
+            required  
+            // onChange={(e)=>{setUserID(e.target.value)}}
+            color="warning"  
+            inputProps={{style:myStyle.TextInSty }}  sx={myStyle.TextFieldsx } 
+            placeholder="User ID" />
+        <TextField 
+            required
+            // onChange={(e)=>{setPass(e.target.value)}}
+            type={"password"}
             color="warning" 
-            inputProps={{style:myStyle.TextInSty }}  sx={myStyle.TextFieldsx} placeholder="Password" />
-        <TextField   color="warning" 
             inputProps={{style:myStyle.TextInSty }}  sx={myStyle.TextFieldsx} 
-            placeholder="Confirm Password" />
+            placeholder="Password" />
+        <TextField 
+            required  
+            onChange={(e)=>{setconfirmPass(e.target.value)}}
+            type={"password"}
+            color="warning" 
+            placeholder="Confirm Password" 
+            inputProps={{style:myStyle.TextInSty,endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            )}}  
+            sx={myStyle.TextFieldsx} 
+            />
+            
         
     </Box>
 
@@ -288,7 +379,7 @@ return (
     </Grid>
       
       
-  </Grid>
+  </Grid>}
     
     
   <Grid item xs={6} sm={2} md={2}  lg={2}  sx={hidbtnTabeMode}> <ButtonRightList/>  </Grid>

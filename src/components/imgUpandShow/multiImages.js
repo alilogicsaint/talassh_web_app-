@@ -16,7 +16,7 @@ export const MultiImagesUpload = (props) => {
      
     var images =[]     
     images.push(preview)
-    console.log(images)
+    // console.log(images)
     
     
     useEffect(() => {

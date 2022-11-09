@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, BrowserRouter, Navigate, } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate, useNavigate, } from "react-router-dom";
 import AgentAccount from "./screens/AgentAccount";
 import BusinessAccount from "./screens/businessAccount";
 import BusinessEntery from "./screens/business/BusinessEntery";
@@ -7,7 +7,7 @@ import CustomerAccount from "./screens/customerAccount";
 import Home from "./screens/home";
 import Register from "./screens/Register";
 import  store  from './store/index';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import ExpertSearch from "./screens/Expert/expertSearch";
 import ExpertEntry from "./screens/Expert/expertEntery";
 import HelperEntry from "./screens/laberHelper/HelperEntery";
@@ -18,12 +18,10 @@ import './App.css'
 
 
 export default function BasicExample() {
-
+  //  const navigate = useNavigate();
    const [isAuthenticated, setIsAuthenticated] = useState(false) 
    const [token, settoken] = useState() 
-   
-
-
+  
 function authenticate(token) {
     setIsAuthenticated(true)
     settoken(token)
@@ -35,6 +33,7 @@ function logout(){
 }
  
  function RequireAuth({ children ,isAuthenticated, token,redirectTo,  ...rest  }) {
+  console.log("children===>",children)
  return children.props.isAuthenticated ? children :  <Navigate to={redirectTo} />
 }
 
